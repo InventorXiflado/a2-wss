@@ -1,0 +1,77 @@
+{
+    "title": "Search Results",
+    "name": "standard.portal.search.results",
+    "version" : "11.0.0",
+    "description" : "A search result component",
+    "active" : true,
+    "property": [
+        
+        {
+           "name" : "query",
+           "title": "Query",
+           "description" : "The query that search results should show.",
+           "required": true,
+           "default" : "statement"
+        },
+        
+        {
+            
+            "name" : "article_page",
+            "type" : "page",
+            "title" : "Result Page",
+            "description" : "The article page which the results has to point to. <br/> It should have a path with at least one dynamic part (for the ID of the article)."
+        },
+
+        {
+            
+            "name" : "topic_page",
+            "type" : "page",
+            "title" : "Topic Page",
+            "description" : "The topic page which the topic-typed results has to point to."
+        },
+
+        {
+            "name" : "search_preview",
+            "type" : "boolean",
+            "title" : "Search Preview",
+            "description" : "If true, search previews will be shown when the user hovers a particular search result."
+        }
+    ],
+
+    "events": {
+
+        "receive": [
+
+            {
+                "name" : "egain11.product.search.filter",
+                "title" : "Search Filter",
+                "description" : "When this events happen, the search results will be recomputed along with the new search filter criteria that is passed."
+            }
+        ]
+    },
+
+    "requirements": {
+
+        "min-width":"100px"
+    },
+
+    "models" : [
+
+
+        {
+
+            "name" : "standard.portal.search",
+            "version" : "11.0",
+            "key" : "search"
+        },
+        
+        {
+
+            "name" : "standard.portal.article",
+            "version" : "11.0",
+            "key" : "article"
+        }
+    ],
+
+    "mobile":true
+}

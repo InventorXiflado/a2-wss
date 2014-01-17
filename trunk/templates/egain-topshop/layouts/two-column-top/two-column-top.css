@@ -1,0 +1,29 @@
+.selfservice-clear {
+
+    clear : both;
+}
+
+.selfservice-centers {
+
+    width : 960px;
+    margin : 0 auto;
+}
+
+.section.header {
+    
+    min-height : 50px;
+}
+
+.section.left {
+
+    float : left;
+    width : 22%;
+    min-height : 300px;
+}
+
+.section.right {
+
+    float : right;
+    width : 75%;
+    min-height : 300px;
+}

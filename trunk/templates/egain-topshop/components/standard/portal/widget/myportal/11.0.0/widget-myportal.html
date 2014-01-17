@@ -1,0 +1,24 @@
+<!-- Your WidgetMyportalComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-secondary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{lang "MY PORTAL"}}
+            </h1>
+            <i class="egce-box-icon icon-link"></i>
+            <div class="egce-clearfix"></div>
+    </div>
+        <div class="egce-box-content egce-p15">
+            <ul class="egce-list">
+                {{#links}}
+                <li class="egce-list-row egce-margin-bottom5 egce-relative egce-m10-left">
+                        <i class="egce-icon icon-tags egce-color-highlighted egce-absolute" style="margin-left:-15px;margin-top:3px"></i>
+                        <a class="egce-font-medium egce-bold" href="{{ url }}">
+                            {{ text }}
+                        </a>
+                    </li>
+                {{/links}}
+        </ul>
+    </div>
+</div>
+</script>

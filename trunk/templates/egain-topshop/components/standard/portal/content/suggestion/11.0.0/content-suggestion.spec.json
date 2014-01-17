@@ -1,0 +1,7 @@
+{
+    "name" : "content-suggestion",
+    "title" : "Suggestion Content",
+    "path" : "content/suggestion",
+	"description" : "This component is used to show the details of a particular suggestion. It is loaded into a modal window in suggestions-list"
+	"author" : "Shivam Pawar"
+}

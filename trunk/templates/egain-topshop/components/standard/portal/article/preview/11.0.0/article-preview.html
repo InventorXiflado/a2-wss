@@ -1,0 +1,42 @@
+<!-- Your ArticlePreviewComponent HTML-->
+<script type="template" name="main">
+    {{#if articles}}
+	    <div class="egce-box-wrap egce-highlighted">
+	        <div class="egce-box-header">
+	            <h1 class="egce-box-heading">
+	                {{ lang "POPULAR_ARTICLES" }}
+	            </h1>
+	            <div class="egce-clearfix"></div>
+	        </div>
+	        <div class="egce-box-content">
+	            <ul class="egce-list egce-vertical egce-ruled">
+                    {{#articles}}
+                        <a class="js-article-view-click" href="{{ call "buildUrl" this}}">
+	                        <li class="egce-list-row egce-p10 selfservice-article-preview-row">
+
+                                <div class="egce-float-left
+                                            selfservice-article-preview-content">
+                                    <div class="egce-font-medium
+                                              egce-bold
+                                              egce-block"
+                                        href="{{ call "buildUrl" this}}">
+                                        {{ name }}
+                                    </div>
+                                    <p class="egce-font-small">{{content}} </p>
+                                </div>
+                                <div class="egce-clearfix"></div>
+                            </li>
+                        </a>
+	                {{/articles}}
+	            </ul>
+	        </div>
+	    </div>
+    {{/if}}
+    
+    {{^articles}}
+    	<h1 class="egce-font-medium egce-p20">
+	    	{{ lang "NO_ARTICLES_AVAILABLE" }}
+	    </h1>
+    {{/articles}}
+    
+</script>

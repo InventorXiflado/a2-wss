@@ -1,0 +1,15 @@
+{
+    "name" : "standard.portal.form.suggestion",
+    "title" : "Suggestion Form",
+    "active" : true,
+    "description" : "Make a suggestion form.",
+    "author" : "Garindra Prahandono",
+    "models" : [
+
+        {
+            "name" : "standard.portal.suggestion",
+            "version" : "11.0",
+            "key" : "suggestion"
+        }
+    ]
+}

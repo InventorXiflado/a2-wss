@@ -1,0 +1,76 @@
+.international {
+	display : none;	
+}
+
+.call-progress {
+	display : none;
+}
+
+.receiver-img {
+	margin-left : 40%;
+}
+
+.text-wrap {
+	margin-top : 22px;
+}
+
+.shadow {
+	height : 2px;
+	background : #eee;
+	width : 110px;
+	margin-left : 5px;
+}
+
+.call-status {
+	background : #ffdc99;
+}
+
+.location-icon {
+	 border-right : 1px solid #ccc;
+	 width : 50%;
+	 text-align : center;
+}
+
+.phone-icon {
+	width : 49%;
+	text-align : center;
+}
+
+.text-background {
+	background : #eee;
+}
+
+input[type=text].active {
+	background : #fff;
+}
+
+.powered-by {
+	color : #b2b2b2;
+}
+
+.powered-font {
+	font-size : 9pt;
+}
+
+select {
+	width : 120px;
+	padding : 3px;
+	margin : 0px;
+	background : #eee;
+	border : 1px solid #ccc;
+	-webkit-border-radius : 5px;
+	-webkit-appearance : none;
+	
+	background-image: linear-gradient(bottom, rgb(199,199,199) 5%, rgb(247,247,247) 53%);
+	background-image: -o-linear-gradient(bottom, rgb(199,199,199) 5%, rgb(247,247,247) 53%);
+	background-image: -moz-linear-gradient(bottom, rgb(199,199,199) 5%, rgb(247,247,247) 53%);
+	background-image: -webkit-linear-gradient(bottom, rgb(199,199,199) 5%, rgb(247,247,247) 53%);
+	background-image: -ms-linear-gradient(bottom, rgb(199,199,199) 5%, rgb(247,247,247) 53%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.05, rgb(199,199,199)), color-stop(0.53, rgb(247,247,247)));
+}
+
+input.text-background {
+	    -webkit-border-radius : 5px;
+		width :38px;
+	}
+	

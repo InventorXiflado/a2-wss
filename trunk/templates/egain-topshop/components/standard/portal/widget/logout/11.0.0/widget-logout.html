@@ -1,0 +1,21 @@
+<script type="template" name="main">
+	<div>
+		<a href="{{ pageUrl "homepage" }}"  title="{{ lang "HOME" }}">
+			<i class="icon-home home-button egce-hover"></i>
+		</a>
+		<span class="user-greeting {{ hide-greeting }}">
+			<span class="greeting"> {{ lang "USER_GREETING"}} </span>
+			<span class="username" title="{{ userNameTooltip }}"> {{ username }} </span>
+		</span>
+		<i class="icon-off logout-button egce-hover" title="{{ lang "LOGOUT" }}"></i>
+	</div>
+</script>
+
+<script type="template" name="anonymous">
+	<div>
+		<a href="{{ pageUrl "homepage" }}" >
+			<i class="icon-home home-button egce-hover"></i>
+			<span class="user-greeting egce-hover"> {{ lang "HOME"}} </span>
+		</a>
+	</div>
+</script>

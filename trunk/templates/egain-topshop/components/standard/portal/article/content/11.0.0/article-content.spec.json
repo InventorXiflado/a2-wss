@@ -1,0 +1,47 @@
+{
+    "name" : "standard.portal.article.content",
+    "title" : "Article Content",
+    "active" : true,
+    "description" : "Displays an article.",
+    "expstudio" : true,
+    "version" : "11.0.0",
+    "path" : "standard/portal/content/article",
+    "property" : [
+
+        {
+            "name" : "article_id",
+            "title" : "Article ID",
+            "type" : "int",
+            "description" : "The article's ID.",
+            "default" : "2042"
+        },
+
+        {
+
+            "name" : "relatedArticlePage",
+            "title" : "Related Article Page",
+            "type" : "page",
+            "description" : "The article page the related article links should point to."
+        }
+    ],
+
+    "models" : [
+
+        {
+            "name" : "standard.portal.article",
+            "version" : "11.0",
+            "key" : "article"
+        },
+        {
+            "name" : "standard.portal.favorite",
+            "version" : "11.0",
+            "key" : "favorite"
+        }
+    ],
+
+    "dependencies": {
+
+        "core" : "3.3.0",
+        "plugins" : ["tipsy"]
+    }
+}

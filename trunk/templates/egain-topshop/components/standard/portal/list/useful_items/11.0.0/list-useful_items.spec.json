@@ -1,0 +1,23 @@
+{
+    "name": "standard.portal.list.useful_items",
+    "title" : "Useful Items List",
+    "description" : "List of portal's useful items.",
+    "active" : true,
+    "models" : [
+
+        {
+            "name" : "standard.portal.general",
+            "version" : "11.0",
+            "key" : "general"
+        }
+    ],
+    
+    "property" : [
+
+        {
+
+            "name" : "listId",
+            "default" : 1004
+        }
+    ]
+}

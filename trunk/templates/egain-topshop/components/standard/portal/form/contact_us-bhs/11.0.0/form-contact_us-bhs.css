@@ -1,0 +1,30 @@
+.component.form-login {
+
+
+}
+.egce-box-header-close{
+	font-family: Arial;
+	font-size: 11px;
+	//height: 28px;
+	padding-right: 37px;
+	//padding-top: 4px;
+	text-align: right;
+}
+
+
+.egce-input-text {
+	select {
+		border:0px;
+
+	} 
+
+}
+
+span.required_contact_us {
+color: #FF0000;
+font-weight: normal;
+position: absolute;
+top: 6px;
+right: 6px;
+font-size: 11pt;
+}

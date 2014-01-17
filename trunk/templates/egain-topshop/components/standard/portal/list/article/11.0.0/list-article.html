@@ -1,0 +1,84 @@
+<script type="template" name="main">
+    <!-- Your ListPopular_articlesComponent HTML-->
+    <div class="egce-box-wrap egce-primary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{ lang "ARTICLES_IN_TOPIC_X" "topic" topic.name }}
+            </h1>
+            <div class="egce-box-side">
+                {{ lang "N_ARTICLES_AVAILABLE" "count" article_actual_count}}
+            </div>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <ul class="egce-list egce-ruled">
+                {{#each articles}}
+                    {{ sub "row" this }}
+                {{/each}}
+                {{^articles}}
+                    <li class="selfservice-article-list-empty">
+                        {{ lang "NO_ARTICLES_AVAILABLE" }}
+                    </li>
+                {{/articles}}
+            </ul>
+            {{#show_load_more}}
+                <div class="egce-load-more
+                            egce-p10
+                            egce-overflowfix
+                            js-load-more">
+                    <div class="egce-float-right
+                                egce-primary
+                                egce-bold" style="background: url(./assets/img/topshop/topshop_loadmore.png) no-repeat;height: 28px;text-indent: -10000px;width: 92px; cursor:pointer;">
+                        {{ lang "LOAD_MORE" }}
+                    </div>
+                </div>
+            {{/show_load_more}}
+        </div>
+    </div>
+</script>
+
+<script type="template" name="row">
+    <li class="egce-list-row">
+        <a class="egce-font-medium egce-p20 egce-block js-article-view-click" href="{{ call "buildUrl" this}}">
+            {{ name }}
+        </a>
+    </li>
+</script>
+
+<script type="template" name="divider">
+    <div class="selfservice-list-scroll-divider">
+        <div class="selfservice-list-scroll-divider-text">
+            &uarr; Top {{ top_entry_count }} entries
+        </div>
+    </div>
+</script>
+
+<script type="template" name="main-old">
+    <!-- Your ListPopular_articlesComponent HTML-->
+    <div class="selfservice-box-wrap">
+        <div class="selfservice-box-header">
+            <h1 class="selfservice-box-header-heading">
+                {{ lang "ARTICLES_IN_TOPIC_X" "topic" topic.name }}
+            </h1>
+            <p class="selfservice-box-header-side">
+                {{ lang "N_ARTICLES_AVAILABLE" "count" article_actual_count}}
+            </p>
+        </div>
+        <ul class="selfservice-article-list">
+            {{#each articles}}
+                {{ sub "li" this }}
+            {{/each}}
+            {{^articles}}
+                <li class="selfservice-article-list-empty">
+                    {{ lang "NO_ARTICLES_AVAILABLE" }}
+                </li>
+            {{/articles}}
+        </ul>
+        {{#show_load_more}}
+        <div class="js-load-more selfservice-article-list-load-more">
+            LOAD MORE
+        </div>
+        {{/show_load_more}}
+    </div>
+</script>
+

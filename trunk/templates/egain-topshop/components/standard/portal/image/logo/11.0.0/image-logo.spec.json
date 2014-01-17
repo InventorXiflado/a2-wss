@@ -1,0 +1,31 @@
+{
+    "name" : "standard.portal.image.logo",
+    "title" : "Image Logo",
+    "description" : "The image logo.",
+    "version" : "11.0.0",
+    "active" : true,
+    "property" : [
+
+        {
+        
+            "name" : "image_url",
+            "title" : "Image Url",
+            "description" : "The url of the image should be shown in the component.",
+            "default" : "http://www.egain.com/wp-content/themes/eGain/library/img/egain_logo.png"
+        },
+
+        {
+            "name" : "width",
+            "title" : "Width",
+            "description" : "Width of the image.",
+            "default" : 250
+        },
+
+        {
+            "name" : "height",
+            "title" : "Height",
+            "description" : "Height of the image.",
+            "default" : 80
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name" : "content-article",
+    "title" : "Article Content",
+    "path" : "content/article",
+    "property" : [
+
+        {
+            "name" : "article_id_segment",
+            "title" : "Article ID Segment",
+            "type" : "url_segment",
+            "description" : "The segment of the url that contains the article's ID."
+        }
+    ],
+
+    "dependencies": {
+
+        "core" : "3.3.0",
+        "plugins" : ["tipsy"]
+    }
+}

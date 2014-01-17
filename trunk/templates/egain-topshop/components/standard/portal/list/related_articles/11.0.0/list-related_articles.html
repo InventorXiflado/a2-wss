@@ -1,0 +1,28 @@
+<!-- Your ListRelated_articlesComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap">
+        <div class="egce-box-header">
+            <div class="egce-box-heading">
+                {{ lang "RELATED_ARTICLES" }}
+            </div>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <ul class="egce-list egce-vertical egce-ruled">
+                {{#articles}}
+                    <li class="egce-list-row">
+                        <a class="egce-p10 egce-block egce-font-medium"
+                           href="{{ call "buildUrl" this }}">
+                            {{ name }}
+                        </a>
+                    </li>
+                {{/articles}}
+                {{^articles}}
+                    <div style="padding:10px">
+                        {{ lang "NO_RELATED_ARTICLES_AVAILABLE" }}
+                    </div>
+                {{/articles}}
+            </ul>
+        </div>
+    </div>
+</script>

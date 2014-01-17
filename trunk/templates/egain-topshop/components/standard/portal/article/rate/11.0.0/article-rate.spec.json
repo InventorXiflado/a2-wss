@@ -1,0 +1,12 @@
+{
+    "path": "article/preview", 
+    "name": "article-preview",
+    "modelDependencies" : {
+
+        "article" : {
+
+            "name" : "article",
+            "version" : "11.0"
+        }
+    }
+}

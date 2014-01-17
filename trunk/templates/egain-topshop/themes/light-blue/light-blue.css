@@ -1,0 +1,38 @@
+body {
+    
+
+}
+
+/*
+    Generic Classes Redefinition
+*/
+
+.selfservice-widget-box {
+
+    border : 1px solid #ccc;
+    -webkit-border-radius : 5px;
+    padding : 8px;
+}
+
+.selfservice-widget-box-header {
+
+    font-size : 14px;
+    font-weight : bold;
+    margin-bottom  :10px;
+}
+
+.selfservice-widget-box-paragraph {
+
+    font-size : 11px;
+    color : #888;
+}
+
+/**
+    
+    Specific Component
+
+*/
+.component.image-logo {
+    
+    
+}

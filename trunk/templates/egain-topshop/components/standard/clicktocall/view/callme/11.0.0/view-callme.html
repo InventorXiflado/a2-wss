@@ -1,0 +1,83 @@
+<!-- Your ViewCallmeComponent HTML-->
+<script type="template" name="main">
+	
+	<ul class="egce-p25 egce-bg-dark">
+	    <li>
+	    	<img class="receiver-img egce-float-left" src="{{ property "call_me_image_src" }}">
+	    	<div class="egce-clearfix"></div>
+	    </li>
+	</ul>
+	        
+	<form id="call-me-form">
+		<div class="egce-p15">
+		    <div class="egce-p10-vertical">
+		        <select  class="timedropdown egce-bold">
+		            <option value="-1">{{ lang "WHEN" }}</option>
+		            <option value="0">{{ lang "NOW" }}</option>
+					<option value="60">{{ lang "1_MIN" }}</option>
+					<option value="180">{{ lang "3_MIN" }}</option>
+					<option value="300">{{ lang "5_MIN" }}</option>
+		        </select>
+		        <img class="arrow" src="{{ property "dropdown_arrow_icon" }}">
+		        <div class="shadow"></div>
+		    </div>
+		    <div class="egce-p10-vertical egce-m15-right egce-float-left">
+		        <select class="country egce-bold">
+		            <option value="-1">{{ lang "COUNTRY" }}</option>
+		           	<option value="1">{{ lang "CANADA" }}</option>
+					<option value="1" selected>{{ lang "US" }}</option>
+		        </select>
+		        <img class="arrow" src="{{ property "dropdown_arrow_icon" }}">
+		    </div>
+		    <div class="input-group egce-p10-vertical">
+			    <div class="international">
+					<input type="text" class="text-background" id="internationalCode" size="2" disabled>
+					<input type="text" class="text-background" id="int-phone" maxlength="20" size="10">
+				</div>
+				<div class="us-or-cn">
+					<input type="text" id="us-phone1" maxlength="3" size="2" class="js-phone-number text-background"/>&nbsp;
+					<input type="text" id="us-phone2" maxlength="3" size="2" class="js-phone-number text-background">&nbsp;
+					<input type="text" id="us-phone3" maxlength="4" size="2" class="js-phone-number text-background">
+				</div>
+		    </div>
+	    </div>
+	    <div class="form-bottom egce-bg-black egce-p10">
+	    	<div class="egce-float-left egce-bold egce-m10-left egce-m10-top">
+	    		<span class="powered-by powered-font">{{ lang "POWERED_BY" }}</span>
+	    		<span class="egce-color-white powered-font">{{ lang "EGAIN" }}</span>
+	    	</div>
+	        <div class="call-me-button egce-button egce-primary egce-bold egce-float-right">{{ lang "CALL_ME" }}</div>
+	        <div class="egce-clearfix"></div>
+	    </div>
+	</form>
+	
+	<div class="call-progress">
+		
+		<div class="location-icon egce-p25-vertical egce-float-left">
+			<img src="{{ property "location_icon_src" }}">
+			<p class="country-name egce-m10-top egce-bold egce-font-small"></p>
+		</div>
+			 
+		<div class="phone-icon egce-p25-vertical egce-float-right">
+			<img src="{{ property "phone_icon_src" }}">
+			<p class="phone-number egce-m10-top egce-bold egce-font-small"></p>
+		</div>
+		<div class="egce-clearfix"></div>
+		
+		<div class="call-status egce-p15">
+			<div class="state1 egce-bold egce-font-medium"></div>
+			<div class="state2 egce-font-small"></div>
+		</div>
+				
+		<div class="form-bottom egce-bg-black egce-p10">
+			<div class="egce-float-left egce-bold egce-m10-left egce-m10-top">
+	    		<span class="powered-by powered-font">{{ lang "POWERED_BY" }}</span>
+	    		<span class="egce-color-white powered-font">{{ lang "EGAIN" }}</span>
+	    	</div>
+			<div class="close-button egce-button egce-primary egce-bold egce-float-right">{{ lang "CLOSE" }}</div>
+			<div class="egce-clearfix"></div>
+		</div>
+	</div>
+		
+</script>
+

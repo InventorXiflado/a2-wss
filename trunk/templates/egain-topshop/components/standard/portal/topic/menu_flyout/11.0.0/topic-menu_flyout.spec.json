@@ -1,0 +1,25 @@
+{
+    "title" : "Topic Flyout Menu",
+    "name": "standard.portal.topic.menu_flyout",
+    "active" : true,
+    "description" : "Multi-level tree topic flyout menu",
+    "models" : [
+    
+        {
+            "name" : "standard.portal.topic",
+            "version" : "11.0",
+            "key" : "topic"
+        }
+    ],
+
+    "property" : [
+
+        {
+
+            "name" : "topic_page",
+            "title" : "Topic Page",
+            "description" : "The page the topic links should point to.",
+            "type" : "page"
+        }
+    ]
+}

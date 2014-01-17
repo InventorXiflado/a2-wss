@@ -1,0 +1,17 @@
+<!-- Your ListHighlighted_topicsComponent HTML-->
+<script type="template" name="main">
+    <ul class="egcb-list egcb-horizontal">
+        {{#topics}}
+            <li>
+            <div class="list-wrap products">
+
+                <div style="height:100px;background:url({{ getOrDefault imageUrl "./assets/img/image_placeholder.png" }}) no-repeat center center;margin-top:20px;">
+                    <a href="{{ call "buildUrl" this }}" class="egce-m20-top" style="width:100%;height:100%"></a>
+                </div>
+                <a href="{{ call "buildUrl" this }}" class="egce-m10-top">{{name}}</a>
+                </div>
+            </li>
+        {{/topics}}
+        <div class="selfservice-clear"></div>
+    </ul>
+</script>

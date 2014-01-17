@@ -1,0 +1,36 @@
+.component.form-suggestion {
+
+    
+}
+    
+.component.form-suggestion h1{
+
+    font-size: 1.5em; 
+}
+
+
+.component.form-suggestion form{
+    
+    font-size:1.3em;
+}
+
+.component.form-suggestion .divider{
+    
+    border-bottom: 0;
+}
+.component.form-suggestion .divider.suggestion-type{
+    
+    
+}
+.component.form-suggestion .divider.info input[type=text]{
+    
+    width : 50%;
+    border : 1px solid #ccc;
+    padding : 5px;
+}
+
+.component.form-suggestion .divider.info textarea{
+    
+    width : 75%;
+    height : 100px;
+}

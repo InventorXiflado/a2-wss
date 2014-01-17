@@ -1,0 +1,16 @@
+{
+    "name": "standard.portal.list.casebases",
+    "version" : "11.0.0",
+    "active" : true,
+    "title" : "Casebases List",
+    "description" : "List of links to Guided Help casebases page.",
+    "author" : "Garindra Prahandono",
+    "models" : [
+
+        {
+            "name" : "standard.portal.casebase",
+            "version" : "11.0",
+            "key" : "casebase"
+        }
+    ]
+}

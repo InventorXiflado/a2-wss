@@ -1,0 +1,158 @@
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-p15" style="position:relative;">
+        <div class="egce-bold egce-color-light-grey">
+            {{ lang "ARTICLE" }} #{{article.id}}
+        </div>
+        <div class="egce-p5-bottom" style="border-bottom : 1px solid #ccc; position:relative;">
+            <div class="selfservice-title-right-bar"></div>
+            <div class="egce-float-left egce-bold" style="width:80%; font-size:20px"> {{ article.name }} </div>
+
+            {{#if showAddToReply}}
+                <div class="egce-float-right">
+                    <span class="egce-hover add-to-reply">
+                        <i class="egce-icon-large icon-plus-sign egce-color-highlighted"></i>
+                        <span class="egce-font-medium">&nbsp;{{lang "ADD_TO_REPLY"}}</span>
+                    </span>
+                </div>
+            {{/if}}
+            
+            {{#if showAddSolution}}
+                <table id="addsolution" class="egce-float-right egce-font-medium" style="display:none;">
+                    <tr>
+                        <td class="egce-hover js-crmcase right5 add-solution-image-size">
+                                <i class="egce-icon egce-font-small icon-plus-sign egce-color-highlighted"></i>
+                        </td>
+                        <td class="egce-hover align-with-image egce-font-medium">
+                                <a id="crmaddsolution" class="egce-hover egce-font-super-small" href="#">{{lang "ADD_SOLUTION"}}</a>
+                        </td>
+                        <td class="egce-hover link-crmreturn add-solution-image-size left10-right5">
+                                <i class="egce-icon egce-font-small icon-circle-arrow-left egce-color-highlighted"></i>
+                        </td>
+                        <td class="egce-hover align-with-image egce-font-medium">
+                                <a id="crmreturn" class="crmreturn egce-hover egce-font-super-small" href="">{{lang "CRM_RETURN_TO_CASE"}}</a>
+                        </td>
+                    </tr>
+                </table>
+            {{/if}}
+            <div class="egce-clearfix"></div>
+        </div>
+
+        <div class="egce-m5-top egce-font-medium egce-styled-content egce-anchor-link" style="word-wrap: break-word; margin-bottom:10px;">
+            {{{ article.content }}}
+        </div>
+
+        <div class="egce-p5-vertical egce-font-medium" style="border-top : 1px solid #ccc; padding : 5px 0; margin-top : 20px">
+                {{#if article.hasAttachments}}
+                    <div class="egce-float-left" style="margin-top:3px">
+
+                        <!-- Attachments -->
+                        <span class="egce-bold">
+                            {{ lang "ATTACHMENTS" }}:&nbsp;
+                        </span>
+
+                        {{#each article.attachment}}
+                            {{ sub "attachment-link" this }}&nbsp;
+                        {{/each}}
+                    </div>
+                {{/if}}
+
+                <div class="egce-float-right">
+                    <span class="egce-hover js-send-email">
+                        <i class="egce-icon egce-font-medium icon-share egce-color-highlighted"></i><span class="egce-font-super-small">&nbsp;&nbsp;{{lang "ARTICLE_SHARE"}}</span>
+                    </span>
+                    &nbsp;
+                    &nbsp;
+                    <span class="egce-hover js-add-favorite">
+                        <i class="egce-icon egce-font-medium icon-bookmark-empty egce-color-highlighted"></i><span class="egce-font-super-small">&nbsp;&nbsp;{{lang "MAKE_FAVORITE"}}</span>
+                    </span>
+                    &nbsp;
+                    &nbsp;
+                    <span class="egce-hover js-print">
+                        <i class="egce-icon egce-font-medium icon-print egce-color-highlighted"></i><span class="egce-font-super-small">&nbsp;&nbsp;{{lang "PRINT"}}</span>
+                    </span>
+                </div>
+                <div class="egce-clearfix"></div>
+        </div>
+
+        <div class="egce-p10-vertical js-rate-area" style="border-top : 3px solid #ccc;margin-top:0px;">
+            <h1 class="selfservice-related-articles-title">{{ rateArticleQuestion }}</h1>
+        </div>
+
+        <div class="egce-p10-vertical selfservice-related-articles" style="border-top : 3px solid #ccc;">
+            <h1 class="selfservice-related-articles-title">{{ lang "RELATED_ARTICLES" }}</h1>
+            <ul class="js-related-articles"></ul>
+        </div>
+        {{#if showRelatedCases}}
+            <div class="egce-p10-vertical selfservice-related-cases">
+                <h1 class="selfservice-related-articles-title">{{ lang "RELATED_CASES" }}</h1>
+                <table class="egce-p10-vertical js-related-cases gridtable">
+                    <tr>
+                        <th>{{ lang "CRM_CASE_ID" }}</th>
+                        <th>{{ lang "CRM_SUBJECT" }}</th>
+                        <th>{{ lang "CRM_ADDED_ON" }}</th>
+                    </tr>
+                </table>
+            </div>
+        {{/if}}
+    </div>
+</script>
+<script type="template" name="print">
+    <div class="print-wrap">
+
+        <div class="top">
+            <h1>{{name}}</h1>
+            <div class="id">{{ lang "ARTICLE_ID" }} : {{id}}</div>
+        </div>
+        <div class="content">{{{content}}}</div>
+        <div class="link">
+            {{ lang "YOU_CAN_VISIT_THIS_ARTICLE_AT" }} :
+            <a href="{{ page_url }}">{{ page_url }}</a>
+        </div>
+    </div>
+</script>
+
+<script type="template" name="related-article-row">
+    <li class="egce-hover-b egce-font-medium egce-margin-bottom5">
+        <a class="egce-highlight-hover js-article-view-click" href="{{ call "buildUrl" this }}">{{ name }}</a>
+    </li>
+</script>
+
+<script type="template" name="related-article-row-external">
+    <li class="egce-hover-b egce-font-medium egce-margin-bottom5 related-external-article">
+		<a class="egce-highlight-hover js-article-view-external-click" href="{{url}}" target="_blank" data-link="{{link.href}}"> 
+			{{ name }}
+		</a>
+		<i class="egce-box-icon icon-external-link egce-font-super-small egce-highlight" title="{{ lang "WEB_ARTICLE" }}"></i>
+    </li>
+</script>
+
+<script type="template" name="related-case-row">
+        <tr>
+            <td class="case-id">{{ caseNumber }}</td>
+            <td><a href="https://{{ crmDomain }}/{{ caseId }}" target="_top" class="egce-hover">{{ subject }}</a></td>
+            <td>{{ formattedAddedOn }}</td>
+        </tr>
+</script>
+
+
+<script type="template" name="attachment-link">
+    <span class="egce-hover egce-bold attachment" id="{{ id }}"> {{ name }} </span>
+</script>
+
+<script type="template" name="rating-thumbs">
+    <span>
+    	<i class="egce-font egce-font-large icon-thumbs-up"></i>
+        <a href="#" class="thumb-up egce-font-medium egce-bold egce-primary egce-link js-rate" direction="up"
+           data-value="{{ upValue }}" >{{ upLabel }}</a>
+    </span>
+    &nbsp; &nbsp;
+    <span>
+    	<i class="egce-font egce-font-large icon-thumbs-down"></i>
+        <a href="#" class="thumb-down egce-font-medium egce-bold egce-link js-rate" direction="down"
+           data-value="{{ downValue }}" >{{ downLabel }}</a>
+    </span>
+</script>
+
+<script type="template" name="rating-stars">
+  <div id="stars" class="js-rate"></div>
+</script>

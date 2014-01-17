@@ -1,0 +1,31 @@
+{
+    "name": "standard.portal.list.popular_articles",
+    "title" : "Popular Articles List",
+    "description" : "List of popular articles.",
+    "active" : true,
+    "models" : [
+
+        {
+            "name" : "standard.portal.dfaq",
+            "version" : "11.0",
+            "key" : "dfaq"
+        }
+    ],
+
+    "property" : [
+
+        {
+            "name" : "article_page",
+            "type" : "page",
+            "title" : "Article Page",
+            "description" : "The target article page the links should point to."
+        },
+
+        {
+            "name" : "flyout_image_src",
+            "title" : "Image URL",
+            "description" : "The url of the flyout image sitting on the top right side of the component.",
+            "default" : "./selfservice/themes/unitel/images/widget-custom_box-img-chips.jpg"
+        }
+    ]
+}

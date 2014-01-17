@@ -1,0 +1,44 @@
+<!-- Your TopicMenu_flyoutComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-secondary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">{{ lang "TOPICS" }}</h1>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <ul class="egce-list egce-vertical egce-multilevel egce-ruled">
+                {{#each topics}}
+                    {{ sub "list-row" this }}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+<script type="template" name="list-row">
+
+    <li class="egce-list-row root egce-color-dark egce-p10">
+        <a class="egce-font-medium" href="{{ call "buildUrl" this }}">{{ name }}</a>
+
+        <ul class="egce-child-list">
+            {{#each children}}
+                {{ sub "child-list-row" this }}
+            {{/each}}
+        </ul>
+    </li>
+
+</script>
+
+<script type="template" name="child-list-row">
+
+    <li class="egce-list-row egce-child-row  egce-color-dark egce-p10" id="{{id}}">
+        <a class="egce-font-medium" href="{{ call "buildUrl" this }}">{{ name }}</a>
+
+        <ul class="egce-child-list">
+            {{#each children}}
+                {{ sub "child-list-row" this }}
+            {{/each}}
+        </ul>
+    </li>
+
+</script>

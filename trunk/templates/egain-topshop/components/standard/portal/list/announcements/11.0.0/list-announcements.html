@@ -1,0 +1,24 @@
+<!-- Your WidgetCustom_boxComponent HTML-->
+
+<script type="template" name="main">
+    {{#announcements}}
+    <div class="selfservice-box-wrap">
+        <a href="#article/{{id}}/{{prettify name}}">
+        </a>
+
+        <div class="selfservice-box-content">
+            <h1 class="selfservice-h2">
+                <img alt="{{name}}" src="{{property "imageUrl"}}"/>
+                <a href="{{ call "buildUrl" this }}">
+                    {{ name }}
+                </a>
+            </h1>
+            <p class="selfservice-paragraph">
+                {{ content }}
+            </p>
+        </div>
+    </div>
+    {{/announcements}}
+
+    <div class="selfservice-clear"></div>
+</script>

@@ -1,0 +1,20 @@
+{
+    "path": "list/related_articles", 
+    "name": "list-related_articles",
+    "title" : "Related Article List",
+    "property" : [
+
+        {
+            "name" : "article_id_segment",
+            "title" : "Article ID Segment",
+            "type" : "url_segment",
+            "description" : "The segment of the url that contains the target article's ID.",
+        }
+    ],
+
+    "constraints" : {
+
+        "max-width" : 300,
+        "min-width" : 50
+    }
+}

@@ -1,0 +1,67 @@
+.content-article{
+
+    overflow : hidden;
+}
+
+.content-article small {
+    
+    font-size : 1.1em;
+    margin-top : 3px;
+    display : block;
+    color : #444;
+}
+
+.content-article p {
+    
+    margin-top : 5px;
+    color : #666;
+    line-height : 1.7em;
+    font-size : 1.1em;
+}
+
+.content-article .selfservice-box-header-side a {
+
+    margin-left : 10px;
+}
+
+.content-article .article-top small {
+    
+    color : #888;
+    font-size : 13px;
+    font-weight : bold;
+    display : block;
+    margin-bottom : 5px;
+}
+
+.content-article .article-content {
+
+    /*border-bottom : 1px solid #ccc;*/
+}
+
+.content-article .article-feedback {
+
+    /*border-top : 3px solid #eee;*/
+    padding : 10px;
+    background : #f7f7f7;
+}
+
+.content-article .article-feedback h1{
+
+    font-size : 15px;
+    font-weight : bold;
+}
+
+.content-article .article-feedback textarea {
+
+    margin-top : 10px;
+    width : 250px;
+    height : 50px;
+    font-size : 13px;
+}
+
+.content-article .article-feedback input[type=submit] {
+
+    display : block;
+    margin-left : 0;
+    margin-top : 5px;
+}

@@ -1,0 +1,17 @@
+<!-- Your WidgetLink_barComponent HTML-->
+<script type="template" name="main">
+	<div class="bar-wrapper 
+				selfservice-footer
+	            egce-font-small
+	            egce-p15
+	            egce-text-right
+	            egce-inverted-text
+	            egce-curved5">
+        
+	        <span class="selfservice-footer-title">{{ lang "KNOWLEDGE_BASE"}}</span> 
+			<span class="egce-p5">{{ lang "POWERED_BY_X" "entity" "eGain"  }}</span>
+			{{#if showContactUsLink}}
+				<span class="egce-hover egce-p5 js-contact-us egce-border-left">{{ lang "CONTACT_US" }}</span>
+			{{/if}}
+	</div>
+</script>

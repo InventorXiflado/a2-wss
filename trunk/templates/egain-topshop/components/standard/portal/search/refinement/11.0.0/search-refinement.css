@@ -1,0 +1,17 @@
+
+.text-wrap {
+	font-family: Arial, Verdana;
+    font-size: 12px;
+    padding-top: 2px;
+    padding-left: 3px;
+    overflow: hidden;
+}
+
+.attribute {
+	border-top: 1px solid #ccc;
+}
+
+input[type="text"] {
+	-webkit-border-radius : 4px;
+	
+}

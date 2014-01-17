@@ -1,0 +1,73 @@
+<!-- Your ArticlePreviewComponent HTML-->
+<script type="template" name="main">
+    {{#if articles}}
+	    <div class="egce-box-wrap egce-highlighted">
+	        <div class="egce-box-header">
+	            <h1 class="egce-box-heading">
+	                {{ lang "POPULAR_ARTICLES" }}
+	            </h1>
+	            <div class="egce-clearfix"></div>
+	        </div>
+	        <div class="egce-box-content">
+	            <ul class="egce-list egce-vertical egce-ruled">
+                    {{#articles}}
+                        <a class="js-article-view-click" href="{{ call "buildUrl" this}}">
+	                        <li class="egce-list-row egce-p10 selfservice-article-preview-row">
+
+                                <div class="egce-float-left
+                                            selfservice-article-preview-content">
+                                    <div class="egce-font-medium
+                                              egce-bold
+                                              egce-block"
+                                        href="{{ call "buildUrl" this}}">
+                                        {{ name }}
+                                    </div>
+                                    <p class="egce-font-small">{{content}} </p>
+                                </div>
+                                <div class="egce-clearfix"></div>
+                            </li>
+                        </a>
+	                {{/articles}}
+	            </ul>
+	        </div>
+	    </div>
+    {{/if}}
+
+
+</script>
+
+
+
+<script type="template" name="topic-preview">
+    <div class="egce-box-wrap egce-primary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{#each topics}}
+                	{{ topic.name}}
+                 {{/each}}
+            </h1>
+
+            {{#hasProperty "flyout_image_src"}}
+                <img class="flyout" src="{{ property "flyout_image_src"}}"/>
+            {{/hasProperty}}
+
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <ul class="egce-list egce-vertical egce-ruled">
+                {{#each childTopics}}
+                    {{sub "row" topic.this}}
+                {{/each}}
+            </ul>
+        </div>
+
+    </div>
+</script>
+<script type="template" name="row" comment="Template for the each of the topic row.">
+    <li class="egce-list-row">
+        <i class="egce-box-icon icon-chevron-right" style="position:absolute;top:29%;left:10px;font-size:22px"></i>
+        <a class="egce-block egce-p20 js-article-view-click" href="{{call "buildTopicUrl" this }}" style="padding-left:45px">
+            {{ name }}
+        </a>
+    </li>
+</script>

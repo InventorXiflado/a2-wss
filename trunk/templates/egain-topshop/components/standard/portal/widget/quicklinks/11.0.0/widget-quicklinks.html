@@ -1,0 +1,29 @@
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-secondary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{ lang "QUICKLINKS" }}
+            </h1>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content egce-p14">
+            <ul class="egce-list">
+                <li class="egce-list-row egce-relative egce-m10-left">
+                        <i class="egce-icon icon-home egce-color-highlighted egce-absolute" style="margin-left:-15px;margin-top:3px"></i>
+                        <a class="egce-font-medium egce-bold" href="{{ pageUrl "homepage" }}" ">
+                            Help & Support Home
+                        </a>
+                    </li>
+                {{#links}}
+                <li class="egce-list-row egce-relative egce-m10-left">
+                        <i class="egce-icon icon-tags egce-color-highlighted egce-absolute" style="margin-left:-15px;margin-top:3px"></i>
+                        <a class="egce-font-medium egce-bold" href="{{ url }}" data-link-type="{{ link_type }}">
+                            {{ text }}
+                        </a>
+                    </li>
+                {{/links}}
+            </ul>
+        </div>
+    </div>
+</script>
+

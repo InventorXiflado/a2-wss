@@ -1,0 +1,32 @@
+.section.header {
+
+    margin-bottom : 10px;
+}
+
+.centers { 
+
+    width : 960px;
+    margin : 0 auto;
+}
+
+.section.left {
+
+    float : left;
+    width : 76%;
+}
+
+.section.right {
+
+
+    float : right;
+    width : 22%;
+}
+
+.clear {
+
+    clear : both;
+}
+
+.section.footer { 
+    margin-top : 15px;
+}

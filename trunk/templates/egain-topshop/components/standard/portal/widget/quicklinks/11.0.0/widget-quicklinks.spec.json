@@ -1,0 +1,53 @@
+{
+    "title" : "Quicklinks Widget",
+    "name" : "standard.portal.widget.quicklinks",
+    "version" : "11.0.0",
+    "description" : "A quicklinks widget.",
+    "active" : true,
+    "models" : [
+
+        {
+            "name" : "standard.portal.general",
+            "version" : "11.0",
+            "key" : "general"
+        },
+
+        {
+            "name" : "standard.portal.favorite",
+            "version" : "11.0",
+            "key" : "favorite"
+        }
+    ],
+
+    "property" : [
+
+        {
+            "name" : "guidedHelpPage",
+            "title" : "Guided Help Link Page",
+            "description" : "The page the guided help link should point to.",
+            "type" : "page"
+        },
+
+        {
+            "name" : "suggestionsPage",
+            "title" : "Suggestions Page",
+            "description" : "The page the suggestions link should point to.",
+            "type" : "page"
+        },
+
+        {
+
+            "name" : "usefulItemsPage",
+            "title" : "Useful Items Page",
+            "description" : "The page the useful items links should point to.",
+            "type" : "page"
+        },
+	    {
+
+            "name" : "bookmarksPage",
+            "title" : "Bookmarks Page",
+            "description" : "The page 'My bookmarks' link should point to.",
+            "type" : "page"
+        }	
+    ]
+}

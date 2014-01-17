@@ -1,0 +1,49 @@
+{
+    "name": "standard.portal.search.bar", 
+    "title":"Search Bar",
+    "active" : true,
+    "property" : [
+        
+        {
+            "name" : "placeholder_text",
+            "title" : "Placeholder Text",
+            "type" : "string",
+            "description" : 
+                        "Placeholder text when a search query is not present."
+        },
+
+        {
+            "name" : "search_page",
+            "title" : "Search Page",
+            "type" : "page",
+            "description" : "The target search page."
+        }
+    ],
+
+    "events" : {
+        
+        "send" : [
+
+            {
+                "name" : "egain11.product.search.type",
+                "title" : "Search Typing",
+                "description" : "Triggered whenever a user types a character."
+            }
+        ]
+    },
+
+    "models" : [
+
+        {
+            "name" : "standard.portal.search",
+            "version" : "11.0",
+            "key" : "search"
+        },
+
+        {
+            "name" : "standard.portal.article",
+            "version" : "11.0",
+            "key" : "article"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+<!-- Your WidgetCommunityComponent HTML-->
+<script type="template" name="main">
+
+    <div class="egce-box-wrap egce-secondary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">{{ lang "COMMUNITY" }}</h1>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content egce-p15">
+
+            {{#with info}}
+            <p class="egce-paragraph egce-font-medium egce-color-light-grey" style="font-size:1.2em">
+
+                {{ lang "OUR_MEMBERS_HAVE_MODE_TOTAL_N_COMMENTS"
+                        "user_count" numberOfUsers
+                        "comment_count" numberOfPosts }}
+            </p>
+
+            <ul class="egce-list">
+                <li class="egce-list-row egce-margin-bottom5 egce-relative egce-m10-left">
+                    <i class="egce-icon icon-star-empty egce-color-highlighted egce-absolute" style="margin-left:-15px;margin-top:3px"></i>
+                    <a class="egce-font-medium egce-bold" href="{{recentTopicsUrl}}">
+                        {{ lang "WHATS_NEW" }}
+                    </a>
+                </li>
+                <li class="egce-list-row egce-margin-bottom5 egce-relative egce-m10-left">
+                    <i class="egce-icon icon-fire egce-color-highlighted egce-absolute" style="margin-left:-15px;margin-top:3px"></i>
+
+                    <a class="egce-font-medium egce-bold" href="{{hotTopicsUrl}}">
+                        {{ lang "HOT_TOPICS" }}
+                    </a>
+                </li>
+                <li class="egce-list-row egce-margin-bottom5 egce-relative egce-m10-left">
+                    <i class="egce-icon icon-group egce-color-highlighted egce-absolute" style="margin-left:-15px;margin-top:3px"></i>
+                    <a class="egce-font-medium egce-bold" href="{{topPostersUrl}}">{{ lang "TOP_POSTERS" }}</a>
+                </li>
+            </ul>
+            {{/with}}
+
+        </div>
+    </div>
+</script>
+
+<script type="template" name="old">
+    <div class="selfservice-box-wrap">
+        <div class="selfservice-box-header">
+            <h1 class="selfservice-box-header-heading">{{ lang "COMMUNITY" }}</h1>
+        </div>
+        <div class="selfservice-box-content">
+            {{#with info }}
+            <p class="selfservice-box-paragraph">
+                {{ lang "OUR_MEMBERS_HAVE_MODE_TOTAL_N_COMMENTS"
+                        "user_count" number_of_users
+                        "comment_count" number_of_posts }}
+
+            </p>
+
+            <li><a href="{{recent_topics_url}}">{{ lang "RECENT_TOPICS" }}</a></li>
+            <li><a href="{{hot_topics_url}}">{{ lang "HOT_TOPICS" }}</a></li>
+            <li><a href="{{top_posters_url}}">{{ lang "TOP_POSTERS" }}</a></li>
+
+            {{/with}}
+            <br/>
+            <ul class="selfservice-box-list">
+                {{post_count}}
+            </ul>
+        </div>
+    </div>
+</script>

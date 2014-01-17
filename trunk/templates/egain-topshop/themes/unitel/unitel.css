@@ -1,0 +1,456 @@
+/*google webfonts*/
+@import url('http://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans:400,300');
+
+#global-wrap {
+	font: 12px 'Open Sans', sans-serif;
+}
+
+#global-wrap a {
+	
+	color: #000000;
+} 
+
+#global-wrap a:hover {
+	
+	color: #ee0000 !important;
+}
+
+.selfservice-clear {
+	
+    clear : both;
+}
+
+.selfservice-article-list-empty {
+
+    padding : 10px;
+}
+
+.selfservice-box-list li{
+	padding: 2px;
+}
+
+.selfservice-box-menu a{
+	
+	display: block;
+	border-bottom: 1px solid #cccccc;
+}
+
+.selfservice-article-list-load-more {
+    
+    cursor: pointer;
+}
+
+.selfservice-search-button {
+
+    background : #000;
+    color : #fff;
+    border : 1px solid #000;
+    font-size : 13px;
+}
+
+.selfservice-h2 {
+
+    font-size : 15px; 
+}
+
+.selfservice-article-list {
+
+
+
+}
+
+    .selfservice-list-scroll-divider {
+
+        background : #eee;
+        padding : 3px 5px;
+        border-top : 1px solid #ddd;
+    }
+
+    .selfservice-list-scroll-divider-text {
+
+        color : #666;
+        font-size : 11px;
+    }
+
+.selfservice-paragraph {
+
+    font-size : 13px;
+    color : #888;
+}
+
+.selfservice-box-wrap {
+
+    border : 1px solid #ccc;
+}
+
+.selfservice-box-header {
+
+     background : #eee;
+     overflow : hidden;
+     padding : 10px;
+     border-bottom : 1px solid #ddd;
+}
+
+.selfservice-box-header-heading {
+
+    float : left; 
+    color: #444;
+    font-size : 15px;
+    font-weight : bold;
+}
+
+.selfservice-box-header-side {
+
+    float : right;
+    font-size : 11px;
+    margin-top : 3px;
+    color : #888;
+}
+
+.selfservice-box-content {
+
+    padding : 10px;
+}
+
+.selfservice-box-paragraph {
+	
+    color : #888;
+}
+
+div.selfservice-box-wrap{
+	
+	background: #ffffff;
+}
+
+.selfservice-box-wrap{
+	
+	border-bottom: 2px solid #ccc;	
+}
+
+.selfservice-box-header-heading {
+	
+	font: 18px 'Alfa Slab One', sans-serif;
+	color: #000000 !important;
+}
+
+.selfservice-form-group {
+
+    padding : 10px 0;
+    border-bottom : 1px solid #ccc;
+}
+
+.selfservice-form-group label {
+
+    display : block;
+}
+
+
+/*** COMPONENTS ***/
+
+/*--- SEARCH-BAR ---*/
+.component.search-bar{
+	
+	border-bottom: 2px solid #ccc !important;
+	background: #000000;
+	color: #ffffff !important;
+	padding: 10px !important;
+}
+
+.component.search-bar input[type="text"]{
+	
+	width: 65%;
+	background: none;
+	font-size: 2.2em !important;
+	line-height: 43px;
+	padding-left: 10px !important;
+}
+
+.component.search-bar .selfservice-search-button{
+
+	padding: 10px 50px 10px 20px;
+	font-size: 2.2em;
+	background: url(./selfservice/themes/unitel/images/search-bar-button-icon.png) right no-repeat  #eb0000;
+}
+
+
+/*--- LIST-HIGHLIGHTED-TOPICS ---*/
+
+.component.list-highlighted_topics .list-wrap{
+	
+	background: #ffffff;
+}
+
+.component.list-highlighted_topics ul {
+	
+	border-bottom: 2px solid #ccc !important;	
+}
+
+.component.list-highlighted_topics .list-wrap.products{
+	
+	background: url(./selfservice/themes/unitel/images/list-highlighted-topics-icons.gif) no-repeat;
+}
+.component.list-highlighted_topics .list-wrap.products:hover{
+	
+	background-position: 0 -150px;
+}
+
+
+.component.list-highlighted_topics .list-wrap.downloads{
+	
+	background: url(./selfservice/themes/unitel/images/list-highlighted-topics-icons.gif) -192px 0 no-repeat;
+}
+.component.list-highlighted_topics .list-wrap.downloads:hover{
+	
+	background-position: -192px -150px;
+}
+
+
+.component.list-highlighted_topics .list-wrap.manuals{
+	
+	background: url(./selfservice/themes/unitel/images/list-highlighted-topics-icons.gif) -384px 0 no-repeat;
+}
+.component.list-highlighted_topics .list-wrap.manuals:hover{
+	
+	background-position: -384px -150px;
+}
+
+
+.component.list-highlighted_topics .list-wrap.articles{
+	
+	background: url(./selfservice/themes/unitel/images/list-highlighted-topics-icons.gif) -576px 0 no-repeat;
+}
+.component.list-highlighted_topics .list-wrap.articles:hover{
+	
+	background-position: -576px -150px;
+}
+
+
+.component.list-highlighted_topics .list-wrap.technical{
+	
+	background: url(./selfservice/themes/unitel/images/list-highlighted-topics-icons.gif) -768px 0 no-repeat;
+}
+.component.list-highlighted_topics .list-wrap.technical:hover{
+	
+	background-position: -768px -150px;
+}
+
+
+/*--- MENU TREE ---*/
+.component.menu-tree ul.selfservice-box-list-menu li a{
+	
+	border-bottom : 1px solid #ccc;
+	background: url(./selfservice/themes/unitel/images/menu-tree-arrows.gif) 5px -2px no-repeat #fff !important;
+	padding: 15px 10px 15px 38px !important;
+	display: block;
+}
+
+
+.component.menu-tree ul.selfservice-box-list-menu ul a{
+	
+	/*padding-left: 20px !important;*/
+	background: #eee !important;
+	color: black !important;
+	
+}
+/*
+.component.menu-tree ul.selfservice-box-list-menu ul ul a{
+	
+	padding-left: 35px !important;
+}
+
+.component.menu-tree ul.selfservice-box-list-menu ul ul ul a{
+	
+	padding-left: 45px !important;
+}
+*/
+
+
+.component.menu-tree ul.selfservice-box-list-menu a{
+	
+	display: block;
+	padding: 8px 5px 8px 38px !important;
+	background: #f6f6f6;
+}
+
+.component.menu-tree ul.selfservice-box-list li{
+	
+    font-size : 11px;
+    color : #444;
+    background: #f5f5f5;
+}
+
+.component.menu-tree ul.selfservice-box-list li a{
+	
+	padding: 8px;
+	padding-left: 38px;
+}
+
+
+/*--- WIDGET COMMUNITY ---*/
+.component.widget-community p.links{
+	
+	padding-top: 10px;
+}
+
+.component.widget-community a{
+	
+	font-size: 13px;
+}
+
+
+/*--- LIST POPULAR ARTICLES ---*/
+.component.list-popular_articles .selfservice-article-list li{
+	
+	background: url(./selfservice/themes/unitel/images/menu-tree-arrows.png) right -40px no-repeat;
+}
+
+.component.list-popular_articles .selfservice-article-list li:hover{
+	
+	background: url(./selfservice/themes/unitel/images/menu-tree-arrows.png) right -40px no-repeat #f6f6f6;
+}
+
+.component.list-popular_articles .selfservice-article-list a{
+	
+	background: url(./selfservice/themes/unitel/images/list-popular_articles-icon.png) 15px 8px no-repeat;
+	padding: 20px 50px 20px 70px;
+	display: block;
+	font-size: 18px;
+	border-top: 1px solid #cccccc;
+}
+
+.component.list-popular_articles .selfservice-article-list-load-more {
+    
+    padding : 12px;
+    text-align : right;
+    color : #fff;
+    background : #000000;
+    font-size : 13px;
+}
+
+
+/*--- LIST RELATED ARTICLES ---*/
+.component.list-related_articles li{
+	
+	padding: 0;
+}
+.component.list-related_articles a{
+	
+	padding: 15px 10px;
+	border-bottom : 1px solid #ccc;
+	display: block;
+}
+
+/*--- CONTENT ARTICLES ---*/
+.component.content-article {
+    
+	/*padding: 15px;*/
+}
+
+.component.content-article .article-top{
+	
+	padding: 15px;
+}
+.component.content-article .article-top h1{
+	
+	font: 36px 'Alfa Slab One', sans-serif;
+}
+.component.content-article .article-content{
+	
+	border-top: 1px solid black;
+    padding : 15px;
+}
+.component.content-article .article-tools{
+	
+	position: absolute;
+	margin-top: 15px;
+	margin-right: 35px;
+	right: 0;
+}
+.component.content-article .article-tools li{
+	float: left;
+	
+}
+.component.content-article .article-tools a{
+
+	color: #888 !important;
+	padding: 10px 10px 10px 30px;
+	
+}
+.component.content-article .article-tools a.favorites{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-favorites.png) 0 3px no-repeat;
+}
+.component.content-article .article-tools a.favorites:hover{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-favorites.png) 0px -31px no-repeat;
+}
+.component.content-article .article-tools a.email{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-email.png) 0 3px no-repeat;
+}
+.component.content-article .article-tools a.email:hover{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-email.png) 0px -31px no-repeat;
+}
+.component.content-article .article-tools a.print{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-print.png) 0 3px no-repeat;
+}
+.component.content-article .article-tools a.print:hover{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-print.png) 0px -31px no-repeat;
+}
+.component.content-article .article-tools a.fullscreen{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-fullscreen.png) 0 3px no-repeat;
+}
+.component.content-article .article-tools a.fullscreen:hover{
+	background: url(./selfservice/themes/unitel/images/article-tools-icon-fullscreen.png) 0px -31px no-repeat;
+}
+
+
+/*--- SEARCH RESULTS ---*/
+.component.search-results{
+	
+	
+}
+.component.search-results .selfservice-article-list li{
+	
+	background: url(./selfservice/themes/unitel/images/menu-tree-arrows.png) right -40px no-repeat;
+}
+
+.component.search-results .selfservice-article-list li:hover{
+	
+	background: url(./selfservice/themes/unitel/images/menu-tree-arrows.png) right -40px no-repeat #f6f6f6;
+}
+
+.component.search-results .selfservice-article-list a{
+	
+	background: url(./selfservice/themes/unitel/images/list-popular_articles-icon.png) 
+                15px 8px no-repeat;
+	padding: 20px 20px 20px 70px;
+	display: block;
+	font-size: 18px;
+	border-top: 1px solid #cccccc;
+}
+
+.component.search-results .selfservice-article-list-load-more {
+    
+    padding : 12px;
+    text-align : right;
+    color : #fff;
+    background : #000000;
+    font-size : 13px;
+}
+
+.component.list-article .selfservice-article-list a{
+	
+	background: url(./selfservice/themes/unitel/images/list-popular_articles-icon.png) 
+                15px 8px no-repeat;
+	padding: 20px 20px 20px 70px;
+	display: block;
+	font-size: 18px;
+	border-top: 1px solid #cccccc;
+}
+
+.component.list-article .selfservice-article-list-load-more {
+    
+    padding : 12px;
+    text-align : right;
+    color : #fff;
+    background : #000000;
+    font-size : 13px;
+}

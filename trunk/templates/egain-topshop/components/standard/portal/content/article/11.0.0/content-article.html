@@ -1,0 +1,60 @@
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-primary egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{ lang "ARTICLE" }} #{{ article.id }}
+            </h1>
+            <div class="selfservice-box-header-side">
+                <ul class="article-tools">
+	                <li>
+	                    <a href="#" class="favorites">
+	                    {{#favorited}}
+	                        {{ lang "ALREADY_FAVORITED" }}
+	                    {{/favorited}}
+	                    {{^favorited}}
+	                        {{ lang "MAKE_FAVORITE" }}
+	                    {{/favorited}}
+	                    </a>
+	                </li>
+	
+	                <li><a href="{{ pageUrl "email_friend" }}" class="email">{{ lang "EMAIL_FRIEND" }}</a></li>
+	                <li><a href="#" class="print">{{ lang "PRINT" }}</a></li>
+	                <li><a href="#" class="rate">{{ lang "RATE_ARTICLE" }}</a></li>
+                </ul>
+            </div>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+
+            <div class="article-top">
+                <h1 class="egce-font-large">{{ article.name }}</h1>
+            </div>
+
+            <div class="article-content egce-font-medium">
+                {{{ article.content }}}
+            </div>
+
+            <div class="article-feedback">
+                <h1>{{ lang "FEEDBACK" }}</h1>
+                <form class="feedback-form">
+                    <textarea style="overflow:hidden;height:50px"></textarea>
+                    <input type="submit" value="{{ lang "SUBMIT" }}"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="template" name="print">
+    <div class="print-wrap">
+        
+        <div class="top">
+            <h1>{{name}}</h1>
+            <div class="id">Article ID : {{id}}</div>
+        </div>
+        <div class="content">{{{content}}}</div>
+        <div class="link">
+            You can visit this article at : 
+            <a href="{{ page_url }}">{{ page_url  }}</a>
+        </div>
+    </div>
+</script>

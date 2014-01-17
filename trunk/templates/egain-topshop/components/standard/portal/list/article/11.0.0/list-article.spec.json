@@ -1,0 +1,27 @@
+{
+    "name": "standard.portal.list.article",
+    "active" : true,
+    "title" : "Article List",
+    "description" : "List of articles of certain topic.",
+    "models" : [
+
+        {
+            "name" : "standard.portal.article",
+            "version" : "11.0",
+            "key" : "article"
+        },
+        {
+            "name" : "standard.portal.topic",
+            "version" : "11.0",
+            "key" : "topic"
+        }
+    ],
+    "property" : [
+        
+        {
+
+            "name" : "topic_id",
+            "default" : 1000
+        }
+    ]
+}

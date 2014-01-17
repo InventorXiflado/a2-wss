@@ -1,0 +1,52 @@
+.selfservice-centers { 
+
+    width : 960px;
+    margin : 0 auto;
+}
+
+.selfservice-clear {
+    
+    clear : both;
+}
+
+.section.header {
+    
+    margin-bottom : 10px;
+}
+
+.section.main {
+    
+    margin-bottom : 20px;
+}
+
+.section.left {
+    
+    float : left;
+    width : 200px;
+    margin-right : 20px;
+    min-height : 200px;
+}
+.mid-wrap {
+    
+    margin-bottom : 15px;
+}
+
+.section.mid {
+
+    float : left;
+    width : 520px;
+    margin-right : 10px;
+    min-height : 200px;
+}
+
+.section.right {
+
+    float : right;
+    width : 200px;
+    min-height : 200px;
+}
+
+.section.footer {
+
+    margin-top : 15px; 
+}

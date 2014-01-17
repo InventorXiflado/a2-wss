@@ -1,0 +1,22 @@
+{
+    "name" : "standard.portal.form.contact_us",
+    "title" : "Contact Us Form",
+    "active" : true,
+    "description" : "The contact us form.",
+    "author" : "Garindra Prahandono",
+    "models" : [
+
+  	
+		 {
+            "name" : "standard.portal.escalation",
+            "key"  : "escalation",
+            "version" : "11.0"
+        },
+
+        {
+            "name" : "standard.portal.topic",
+            "key"  : "topic",
+            "version" : "11.0"
+        }
+    ]
+}

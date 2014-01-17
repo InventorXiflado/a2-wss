@@ -1,0 +1,14 @@
+{
+    "name": "standard.portal.list.favorites",
+    "title" : "Bookmark List",
+    "active" : true,
+    "description" : "List of bookmarked articles",
+    "models" : [
+
+        {
+            "name" : "standard.portal.favorite",
+            "version" : "11.0",
+            "key" : "favorite"
+        }
+    ]
+}

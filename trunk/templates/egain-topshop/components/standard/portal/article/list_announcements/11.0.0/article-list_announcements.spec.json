@@ -1,0 +1,31 @@
+{
+    "name": "standard.portal.article.list_announcements", 
+    "version" : "11.0.0",
+    "active" : true,
+    "title":"Announcements Article List",
+    "description" : "Shows a list of announcements articles.",
+    "models" : [
+
+        {
+            "name" : "standard.portal.article",
+            "version" : "11.0",
+            "key" : "article"
+        }
+    ],
+
+    "property" : [
+
+        {
+            "name" : "articlePage",
+            "title" : "Article Page",
+            "type" : "page",
+            "description" : "The article page which the links should point to."
+        },
+		       {
+            "name" : "flyout_image_src",
+            "title" : "Image URL",
+            "description" : "Url of the image sitting on the top right side of the component.",
+            "default" : "./selfservice/themes/unitel/images/widget-custom_box-img-chips.jpg"
+        }
+    ]
+}

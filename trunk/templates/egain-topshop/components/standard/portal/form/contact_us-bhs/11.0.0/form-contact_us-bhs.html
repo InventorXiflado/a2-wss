@@ -1,0 +1,295 @@
+<!-- Your FormLoginComponent HTML-->
+<script type="template" name="main">
+	<div class="egce-box-header-close">
+
+	</div>
+    <div class="egce-box-wrap egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">{{ lang "CONTACT_US" }}</h1>
+			<div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <form class="selfservice-form" style="background:#fff;padding:5px">
+					<div class="egce-input-text egce-rounded5" style="margin-bottom: 5px;height:30px;">
+						<select name="select_top" id="select_top" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;border:0px">
+							<option value="">{{lang "CU_WHAT_IS_THE_QUERY_REGARDING"}}</option>
+							<option value="que_1">Refunds and Returns</option>
+							<option value="que_2">Tracking</option>
+							<option value="que_3">Orders</option>
+							<option value="que_4">Complaint</option>
+							<option value="que_5">General Enquiries</option>
+							<option value="que_6">Discounts</option>
+							<option value="que_7">Stock Query</option>
+							<option value="que_8">Gift and Account Cards</option>
+							<!--<option value="que_9">Wedding</option>
+							<option value="que_10">Lighting and Home</option>
+							<option value="que_11">Food Services</option>-->
+						</select>
+						<span class="required_contact_us" >*</span>
+					</div>
+					<div style="overflow:hidden;background-color: #eeeeee;margin-bottom: 5px" id="support_que">
+						<div class="egce-input-text egce-rounded5 que" id="que_1">
+							<select name="select_que_1" id="select_que_1" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;background: transparent" disabled="disabled">
+								<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+								<option value="ans_1">I've returned my item(s) but not yet received my refund</option>
+								<option value="ans_2">How can I return an online purchase?</option>
+								<option value="ans_3">I received an incorrect refund</option>
+								<option value="ans_4">Can I exchange my item(s)?</option>
+								<!--<option value="ans_5">Can I return items that contain food and drink?</option>-->
+								<option value="ans_6">The item I have received is damaged</option>
+								<option value="ans_7">I was unable to get a refund in store</option>
+								<option value="ans_8">I have a query regarding my Gift Card refund</option>
+								<option value="ans_9">Other refunds and returns query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_2" style="display: none;">
+							<select name="select_que_2" id="select_que_2" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+									<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+									<option value="ans_10">Do you deliver to my country?</option>
+									<option value="ans_11">My Nominated Day Delivery is late</option>
+									<option value="ans_12">My Standard Delivery is late</option>
+									<option value="ans_13">Why has my parcel been passed to another courier?</option>
+									<option value="ans_14">How long will it take for my parcel to arrive in store?</option>
+									<option value="ans_15">My Collect From Store</option>
+									<option value="ans_16">What happens if I do not collect my order from the store, or no longer want it?</option>
+									<option value="ans_17">I have not had my parcel collected</option>
+									<option value="ans_18">Other tracking query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_3" style="display: none;">
+							<select name="select_que_3" id="select_que_3" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+								<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+								<option value="ans_19">There is a missing or incorrect item in my order</option>
+								<option value="ans_20">Can I cancel or amend my order?</option>
+								<option value="ans_21">I have a query relating to my order</option>
+								<option value="ans_22">What payment methods do you accept?</option>
+								<option value="ans_23">Other order query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_4" style="display: none;">
+							<select name="select_que_4" id="select_que_4" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+									<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+									<option value="ans_24">Accident/Incident</option>
+									<option value="ans_25">Mobility/Access</option>
+									<option value="ans_26">I wish to make a complaint about my order or delivery</option>
+									<option value="ans_27">I wish to make a complaint about service in a store</option>
+									<option value="ans_28">I have a query regarding a faulty item</option>
+									<option value="ans_29">I wish to make a complaint about the condition of a store</option>
+									<option value="ans_30">Other complaint query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_5" style="display: none;">
+							<select name="select_que_5" id="select_que_5" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+									<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+									<option value="ans_31">Do you have any information about your company (Company Report, Ethical Policy, etc.)?</option>
+									<option value="ans_32">I would like to become a supplier or am looking for a charity donation</option>
+									<option value="ans_33">I need my account to be unlocked or my password reset</option>
+									<option value="ans_34">I am having a general problem with my online account</option>
+									<option value="ans_35">I need to find out the opening times or telephone number of a store</option>
+									<option value="ans_36">Job Opportunities</option>
+									<option value="ans_37">Do you offer Student Discount?</option>
+									<option value="ans_38">Do you offer NHS Staff or Armed Forces discount?</option>
+									<option value="ans_39">Other General enquiry</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_6" style="display: none;">
+							<select name="select_que_6" id="select_que_6" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+									<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+									<option value="ans_40">My promotion code didn't work when placing my order</option>
+									<option value="ans_41">My promotion code is not being accepted at the checkout</option>
+									<option value="ans_42">I didn't receive the discount advertised</option>
+									<option value="ans_43">Other discount query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_7" style="display: none;">
+							<select name="select_que_7" id="select_que_7" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+								<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+								<option value="ans_44">How can I locate an item of stock?</option>
+								<option value="ans_45">I have a general product query</option>
+								<option value="ans_46">Other stock query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_8" style="display: none;">
+							<select name="select_que_8" id="select_que_8" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+									<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+									<option value="ans_47">Can I use my Gift Card to pay online?</option>
+									<option value="ans_48">I have not received the Gift Card purchased online</option>
+									<option value="ans_49">What can I do if I have lost my Gift Card?</option>
+									<option value="ans_50">I have had problems with my Gift Card</option>
+									<option value="ans_51">I have a query about an account card</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_9" style="display: none;">
+							<select name="select_que_9" id="select_que_9" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+									<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+									<option value="ans_52">Can I return or exhange Wedding Items?</option>
+									<option value="ans_53">Can I get a colour swatch ?</option>
+									<option value="ans_54">Other wedding query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_10" style="display: none;">
+							<select name="select_que_10" id="select_que_10" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+								<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+								<option value="ans_55">I have parts missing from a product or need to buy some spare parts for a product.</option>
+								<option value="ans_56">I have received a faulty item</option>
+								<option value="ans_57">Other lighting and home query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5 que" id="que_11" style="display: none;">
+							<select name="select_que_11" id="select_que_11" class="egce-table-cell egce-font-medium" style="width:455px;height: 29px;padding: 4px 7px 5px 0px;">
+								<option value="">{{lang "CU_WHAT_WOULD_YOU_LIKE_TO_KNOW"}}</option>
+								<option value="ans_58">I have a general complaint about one of your restaurants</option>
+								<option value="ans_59">I have a complaint about a promotion /offer for your restaurant</option>
+								<option value="ans_60">Other food services query</option>
+							</select>
+							<span class="required_contact_us" >*</span>
+						</div>
+
+					</div>
+
+                    <div style="clear: both">
+                        <!--div class="egce-input-text egce-rounded5" style="width:225px">
+                            <input class="egce-input-text
+                                          	egce-p5 egce-js-placeholder
+                                          	egce-table-cell
+                                          	egce-font-medium"
+                               				type="text" name="name" value="{{lang "NAME"}}" data-placeholder="{{lang "NAME"}}"/>
+                        </div-->
+						<div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: left; margin: 0 0 3px">
+								<input class="egce-input-text
+											egce-p5 egce-js-placeholder
+											egce-table-cell
+											egce-font-medium"
+											type="text" name="order_number" value="{{lang "CU_ORDER_NUMBER"}}" data-placeholder="{{lang "CU_ORDER_NUMBER"}}" style="height: 19px;width:85%;border:0px;"/>
+						</div>
+                        <div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: right; margin: 0 0 3px">
+                  				<input class="egce-input-text
+                                          	egce-p5 egce-js-placeholder
+                                          	egce-table-cell
+                                          	egce-font-medium"
+                               				type="text" name="email" value="{{lang "EMAIL_ADDRESS"}}" data-placeholder="{{lang "EMAIL_ADDRESS"}}" style="height: 19px;width:85%;border:0px;"/>
+                               	<span class="required_contact_us" >*</span>
+                        </div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;float: left; margin: 3px 0;height:30px;">
+								<select name="name_title" class="egce-table-cell
+											egce-font-medium" style="width:210px;height: 27px;padding: 4px 7px 4px 0;outline: none">
+											<option value="">{{lang "CU_PLEASE_SELECT_A_TITLE"}}</option>
+											<option value="Mr">Mr</option>
+											<option value="Mrs">Mrs</option>
+											<option value="Ms">Ms</option>
+											<option value="Miss">Miss</option>
+											<option value="Dr">Dr</option>
+								</select>
+								<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: right; margin:  3px 0">
+								<input class="egce-input-text
+											egce-p5 egce-js-placeholder
+											egce-table-cell
+											egce-font-medium"
+											type="text" name="first_name" value="{{lang "CU_FIRST_NAME"}}" data-placeholder="{{lang "CU_FIRST_NAME"}}" style="height: 19px;width:85%;border:0px;"/>
+								<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: left; margin:  3px 0">
+								<input class="egce-input-text
+											egce-p5 egce-js-placeholder
+											egce-table-cell
+											egce-font-medium"
+											type="text" name="last_name" value="{{lang "CU_LAST_NAME"}}" data-placeholder="{{lang "CU_LAST_NAME"}}" style="height: 19px;width:85%;border:0px;"/>
+								<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: right; margin:  3px 0">
+								<input class="egce-input-text
+											egce-p5 egce-js-placeholder
+											egce-table-cell
+											egce-font-medium"
+											type="text" name="house_number_street" value="{{lang "CU_HOUSE_NUMBER_STREET"}}" data-placeholder="{{lang "CU_HOUSE_NUMBER_STREET"}}" style="height: 19px;width:85%;border:0px;"/>
+						</div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: left; margin:  3px 0">
+								<input class="egce-input-text
+											egce-p5 egce-js-placeholder
+											egce-table-cell
+											egce-font-medium"
+											type="text" name="address_2" value="{{lang "CU_ADDRESS_2"}}" data-placeholder="{{lang "CU_ADDRESS_2"}}" style="height: 19px;width:85%;border:0px;"/>
+											<span class="required_contact_us" ></span>
+						</div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: right; margin:  3px 0">
+								<input class="egce-input-text
+											egce-p5 egce-js-placeholder
+											egce-table-cell
+											egce-font-medium"
+											type="text" name="post_code" value="{{lang "CU_POST_CODE"}}" data-placeholder="{{lang "CU_POST_CODE"}}" style="height: 19px;width:85%;border:0px;"/>
+								<span class="required_contact_us" ></span>
+						</div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;padding-bottom: 1px;float: left; margin:  3px 0">
+								<input class="egce-input-text
+											egce-p5 egce-js-placeholder
+											egce-table-cell
+											egce-font-medium"
+											type="text" name="contact_number" value="{{lang "CU_CONTACT_NUMBER"}}" data-placeholder="{{lang "CU_CONTACT_NUMBER"}}" style="height: 19px;width:85%;border:0px;"/>
+								<span class="required_contact_us" >*</span>
+						</div>
+						<div class="egce-input-text egce-rounded5" style="width:238px;float: right; margin:  3px 0;height:30px;">
+								<select name="contact_preference" class="egce-table-cell
+											egce-font-medium" style="width:210px;height: 29px;padding: 4px 7px 4px 0;outline: none">
+											<option value="">{{lang "CU_PLEASE_SELECT"}}</option>
+											<option value="Phone">Phone</option>
+											<option value="Email">Email</option>
+											<option value="No contact required">No contact required</option>
+								</select>
+								<span class="required_contact_us" >*</span>
+						</div>
+                    </div>
+                    <!--<br/>
+					<div class="egce-input-text egce-rounded5" style="width:483px;float: left; padding: 8px 0;margin:  3px 0 5px">
+						<span class="egce-font-medium">Attachment:</span> <input type="file" name="datafile" value="" style="outline: none"/>
+						<br/>
+					</div>-->
+
+                    <div class="egce-clearfix"></div>
+					<div class="egce-input-text" style="overflow:hidden;border: none">
+						<textarea class="egce-m5-bottom
+										 egce-font-medium
+										egce-block
+										egce-rounded5
+										egce-p5
+										egce-js-placeholder" style="width:473px;background:#fff;border:1px solid #ccc;height: 50px;resize: none;outline: none" name="description" data-placeholder="{{lang "MESSAGE"}}">{{lang "MESSAGE"}}</textarea>
+						<span class="required_contact_us" >*</span>
+						<div class="egce-clearfix"></div>
+		                <input class="egce-button egce-primary egce-bold" style="width:100px;text-align:center; margin-left:4px;float:right;display:block;height: 40px" value="{{ lang "CONTINUE" }}" type="submit"/>
+		                <!--input class="egce-primary egce-bold" style="width:72px;text-align:center; margin-left:4px;float:right;display:block;height: 28px;text-indent: -10000px;background: url(./assets/img/bhs/Submit.gif) no-repeat;" value="" type="submit" /-->
+						<div class="egce-clearfix"></div>
+					</div>
+					<span style="position:absolute;bottom:11px;left: 14px">Please fill all the required fields marked with a red star.</span>
+					<input id="configId" name="configId" value="" type="hidden"/>
+					<input id="xEgainSessionId" name="xEgainSessionId" value="" type="hidden"/>
+					<input type="hidden" name="subject" value=""/>
+					<input type="hidden" name="name" value=""/>
+					<div class="egce-clearfix"></div>
+            </form>
+        </div>
+    </div>
+
+</script>
+
+<script type="template" name="sent">
+    <div class="egce-p15 egce-font-medium" style="background:#f7f7f7;border:1px solid #ccc;margin-top: 32px;">
+        {{lang "EMAIL_SENT"}}
+    </div>
+</script>
+
+<script type="template" name="error">
+    <div class="egce-p15 egce-font-medium" style="background:#f7f7f7;border:1px solid #ccc;margin-top: 32px;">
+        {{lang "ESCALATION_ERROR"}}
+    </div>
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Help - Topshop</title>
+
+        <link href="http://media.topshop.com/wcsstore/ConsumerDirectStorefrontAssetStore/images/colors/color7/v3/css/screen.css" type="text/css" rel="stylesheet">
+        <link href="http://media.topshop.com/wcsstore/ConsumerDirectStorefrontAssetStore/images/colors/color7/v3/css/brand.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet/less" type="text/css" href="../../egain-topshop/core/assets/styles/core.css"/>
+
+        <!--[if IE 7]><link rel="stylesheet" href="../../egain-topshop/core/assets/styles/core-ie7.css"><![endif]-->
+
+    </head>
+    <body>
+
+
+
+        <div id="global-wrap" class="selfservice-global-wrap"></div>
+        <div style="clear:both"></div>
+
+        <script>
+            //Create fake console object for IE.
+            if(!window.console)
+                window.console = {log:function(){}};
+        </script>
+
+        <script type="text/javascript" src="../../egain-topshop/core/libs/js/require.js"></script>
+        <script type="text/javascript" src="../../egain-topshop/core/libs/js/selfservice-boot.js"></script>
+        <script type="text/javascript" src="../../egain-topshop/core/libs/js/selfservice-core.js"></script>
+        <script type="text/javascript" src="../../egain-topshop/core/libs/js/spin.min.js"></script>
+        <script type="text/javascript" src="../../egain-topshop/core/libs/js/url-min.js"></script>
+        <script type="text/javascript" src="../../egain-topshop/core/libs/js/less.js"></script>
+
+        <script>
+            //Boot the selfservice portal.
+            SelfService.deploy({
+
+                //The general mode of the application. There are 2 modes:
+                //`portal` or `component`. Portal is the default mode,
+                //which is basically just loads the manifest and load
+                //all the pages and components it needs. The `component`
+                //will be used for the widget usage of SelfService, which
+                //will just load a single component onto the page.
+                'mode' : 'portal',
+
+                //The base host of the of the selfservice template folder.
+                //If not supplied, it will use the current host with
+                //  `/selfservice` as the base path.
+                //Note that this cannot come from a different host
+                //because of cross-domain issues.
+                'baseUrl' : '../../egain-topshop',
+
+                //manifestUrl
+                'manifestUrl' : './manifest.json',
+
+                //The development mode, defaults to false
+                //Mainly we turn on the cache busting for files on dev mode.
+                //(append nocache GET parameter to each AJAX request.)
+                'dev' : true,
+
+                //The root element selector
+                //onto which the application will put its
+                //elements to. Will default to a div element with id
+                //global-wrap.
+                'rootElementSelector' : '#global-wrap',
+
+                //The maximum seconds it should wait for its
+                //modules before it timeouts
+                'waitSeconds' : 15
+            });
+        </script>
+    </body>
+</html>

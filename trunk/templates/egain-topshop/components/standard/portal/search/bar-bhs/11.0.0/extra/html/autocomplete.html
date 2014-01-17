@@ -1,0 +1,81 @@
+{{#if suggestions.general}}
+
+    <div class="egce-font-medium
+                egce-p10 
+                egce-bold
+                egce-bg-highlighted 
+                egce-color-primary">
+        {{ lang "SEARCH_SUGGESTIONS" }}
+    </div>
+
+    <ul class="egce-list egce-ruled">
+        {{#each suggestions.general}}
+            <li class="egce-list-row
+                       egce-p10
+                       egce-font-medium"
+                data-entity-id="{{entity_id}}" 
+                data-type="{{type}}">
+                {{{text}}}
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+{{#if suggestions.article}}
+    <div class="egce-font-medium
+                egce-p10 
+                egce-bold
+                egce-bg-primary 
+                egce-color-primary">
+        {{ lang "ARTICLES" }}
+    </div>
+    <ul class="egce-list egce-ruled">
+        {{#each suggestions.article}}
+            <li class="egce-list-row
+                       egce-p10
+                       egce-font-medium"
+                data-entity-id="{{entity_id}}" 
+                data-type="{{type}}">{{{text}}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+{{#if suggestions.guided_help}}
+    <div class="egce-font-medium
+                egce-p10 
+                egce-bold
+                egce-bg-primary 
+                egce-color-primary">
+        {{ lang "GUIDED_HELP" }}
+    </div>
+    <ul class="egce-list egce-ruled">
+        {{#each suggestions.guided_help}}
+            <li class="egce-list-row
+                       egce-p10
+                       egce-font-medium"
+                data-entity-id="{{entity_id}}"
+                data-type="{{type}}">
+                {{{text}}}
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+{{#if suggestions.topic}}
+    <div class="egce-font-medium
+                egce-p10 
+                egce-bold
+                egce-bg-primary 
+                egce-color-primary">
+        {{ lang "TOPICS" }}
+    </div>
+    <ul class="egce-list egce-ruled">
+        {{#each suggestions.topic}}
+            <li class="egce-list-row
+                       egce-p10
+                       egce-font-medium"
+                data-entity-id="{{entity_id}}" 
+                data-type="{{type}}">{{{text}}}</li>
+        {{/each}}
+    </ul>
+{{/if}}

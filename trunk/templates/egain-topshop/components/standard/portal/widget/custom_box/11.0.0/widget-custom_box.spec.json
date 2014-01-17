@@ -1,0 +1,39 @@
+{
+    "path": "widget/custom_box", 
+    "name": "widget-custom_box",
+    "title" : "Custom Box Widget",
+    "property" : [
+        
+        {
+            "type" : "string",
+            "name" : "title",
+            "title" : "Title",
+            "description" : "The title of the box.",
+            "required" : true
+        },
+
+        {
+            "type" : "url",
+            "name" : "link_url",
+            "title" : "Link URL",
+            "description" : "The url that the title tag points to."
+        },
+
+        {
+            
+            "type" : "string",
+            "name" : "paragraph",
+            "title" : "Paragraph",
+            "description" : "The paragraph of the box."
+        },
+
+        {
+            "type" : "url",
+            "name" : "image_url",
+            "title" : "Image URL",
+            "description" : "The url of the image."
+        }
+    ],
+
+    "floatable" : true
+}

@@ -1,0 +1,111 @@
+<!-- Your FormSuggestionComponent HTML-->
+<script type="template" name="main">
+	<div class="egce-box-wrap egce-highlighted egce-border">
+		<div class="egce-box-header">
+			<h1 class="egce-box-heading">{{ lang "MANAGE_SUGGEST" }}</h1>
+			<div class="egce-clearfix"></div>
+ 		</div>
+		<div class="egce-box-content">
+			<div class="egce-border-bottom egce-p20-left" id="pageoptions" style="position:relative;z-index:10001;">
+				<div class="egce-dropdown egce-m15-top egce-m5-bottom">
+					<div class="current-dropdown-state">
+						<div class="egce-dropdown-option egce-float-left" id="selectedtypevalue">{{ lang "SUGGESTED" }}</div>
+						<i class="icon-chevron-down egce-drop-down-symbol"></i>
+						<div class="egce-clearfix"></div>
+						<ul>
+							<li id="suggested" class="egce-selected-option">
+								<div class="egce-dropdown-option egce-float-left">{{ lang "SUGGESTED" }}</div>
+									<i class="icon-ok egce-drop-down-symbol"/>
+								<div class="egce-clearfix"></div>
+							<li id="pending">
+								<div class="egce-dropdown-option egce-float-left">{{ lang "PENDING" }}</div>
+									<i class="icon-ok egce-drop-down-symbol"/>
+								<div class="egce-clearfix"></div>
+							</li>
+							<li id="approved">
+								<div class="egce-dropdown-option egce-float-left">{{ lang "APPROVED" }}</div>
+									<i class="icon-ok egce-drop-down-symbol"/>
+								<div class="egce-clearfix"></div>
+							</li>
+							<li id="rejected">
+								<div class="egce-dropdown-option egce-float-left">{{ lang "REJECTED" }}</div>
+									<i class="icon-ok egce-drop-down-symbol"/>
+								<div class="egce-clearfix">
+							</li>
+						</ul>
+					</div>
+			</div>
+			<div class="sort-options egce-float-left egce-m25-top egce-m30-left egce-invisible-element">
+				<div class="heading egce-float-left egce-p10">{{lang "SORT BY"}}:</div>
+				<div class="sortoption sortoptionnotselected" id="name">{{ lang "TITLE" }}</div>
+				<div class="seperator">|</div>
+				<div class="sortoption sortoptionnotselected" id="description">{{ lang "SUGGEST_DESCRIPTION"}}</div>
+				<div class="seperator">|</div>
+				<div class="sortoption sortoptionnotselected" id="lastmodifieddate">{{ lang "DATE" }}</div>
+				<div class="seperator">|</div>
+				<div class="sortoption sortoptionnotselected" id="lastmodifiedby">{{ lang "MODIFIED BY" }}</div>
+				<div class="seperator">|</div>
+				<div class="sortoption sortoptionnotselected" id="nextapprover">{{ lang "NEXT APPROVER" }}</div>
+				<div class="egce-clearfix"></div>
+			</div>
+			<div class="egce-clearfix"></div>
+		</div>
+
+			<div id="suggestionsListDiv">
+				<ul class="egce-list egce-vertical egce-ruled" id="suggestionsList">
+					{{#results.suggestion}}
+						{{ sub "suggestion-row" this }}
+					{{/results.suggestion}}
+
+					{{^results.suggestion}}
+						<div class="egce-p15 egce-font-medium">
+							{{lang "NO_SUGGESTIONS_FOUND"}}
+						</div>
+					{{/results.suggestion}}
+				</ul>
+			</div>
+		</div>
+		<div id="errormsg" class="errormsg"></div>
+	{{#show_load_more}}
+		<div class="egce-load-more egce-p10 egce-overflowfix">
+			<div class="egce-button	egce-float-right egce-primary egce-bold js-load-more">
+				{{ lang "LOAD_MORE" }}
+			</div>
+		</div>
+	{{/show_load_more}}
+	</div>
+</script>
+
+<script type="template" name="suggestion-row">
+	<li class="egce-list-row" id="{{this.articleId}}">
+		<div class="suggestionslistrow"  id="viewdetails">
+			<div class="egce-list-row-col egce-list-row-col-one">
+				<p class="name ellipsis multiline">
+					{{this.name}}
+				</p>
+				<p class="description ellipsis multiline">
+					{{this.description}}
+				</p>
+			</div>
+			<div class="egce-list-row-col egce-list-row-col-two">
+				<div class="detail lastmodifieddate">
+					<div class="heading">Date</div>
+					<div class="value">{{this.lastModifiedDate}}</div>
+				</div>
+				<div class="detail lastmodifiedby">
+					<div class="heading">Modified By</div>
+					<div class="value">{{this.lastModifiedByUserName}}</div>
+				</div>
+				<div class="detail nextapprover">
+					<div class="heading">Next Approver</div>
+					<div class="value">{{this.nextApprover}}</div>
+				</div>
+			</div>
+			<div class="egce-list-row-col egce-list-row-col-three delete-icon" id="{{this.articleId}}">
+				<i class="icon-trash egce-font-super-large" id="deletesuggestion"/>
+			</div>
+			<div class="egce-clearfix"></div>
+		</div>
+	</li>
+</script>
+

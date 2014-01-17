@@ -1,0 +1,20 @@
+.component.form-email_friend {
+
+    
+}
+.egce-box-header-close{
+    font-family: Arial;
+    font-size: 11px;
+    padding-right: 37px;
+    text-align: right;
+}
+.component.form-email_friend .error{
+
+    color : red;  
+    clear : left;
+    display : none;
+}
+
+input.egce-input-text {
+    border: 0px;
+}

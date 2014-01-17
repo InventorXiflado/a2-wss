@@ -1,0 +1,223 @@
+<script type="template" name="main">
+
+    <!--- GENERAL -->
+    <div class="egce-box-wrap egce-primary egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{lang "SEARCH_RESULTS_FOR" }} <span style="color:#333">"{{ query }}"</span>
+            </h1>
+            <p class="egce-box-side">
+                {{lang "N_RESULTS_FOUND" "count" results.pagingInfo.maxRange}}
+            </p>
+            <div class="egce-clearfix"></div>
+        </div>
+        {{#if results.isSpellingCorrected}}
+        	<div class="egce-bg-dark egce-font-small egce-bold egce-p10">
+	        		<span class="egce-color-white"> {{lang "DID_YOU_MEAN" }}: </span>
+	        		<a href="{{ call "buildSearchUrl" results.correctedQuery }}">
+	        			<span class="spellcheck-suggestion"> {{results.correctedQuery}} </span>
+	        		</a>
+	        </div>
+        {{/if}}
+
+        <div class="egce-box-content">
+            <ul class="egce-list egce-vertical egce-ruled selfservice-article-list js-portal">
+
+                {{#isEscalationAvoidanceSearch}}
+                    <div class="egce-p15 egce-font-medium avoidance-block" style="border-bottom: 1px solid #ccc;font-size: 11px;">
+                    	{{lang "ESCALATION_AVOID" }} <br/> {{lang "ESCALATION_AVOID1" }}
+                    	<div>
+							<div class="js-confirm-avoid-esc" style="background: none repeat scroll 0 0 #808080;color: #FFFFFF;cursor: pointer;display: block;float: left;height: 22px;margin-top: 15px;padding: 7px 4px 2px 4px;text-align: center;width: 100px;">Submit Email</div>
+							<!--div class="js-cancel-avoid-esc" style="width:51px;text-align:center; margin:4px 0 0 5px;float:left;display:block;height: 28px;text-indent: -10000px;background: url(./assets/img/bhs/No.gif) no-repeat;"></div-->
+							<div style="clear:both"></div>
+						</div>
+                    </div>
+                {{/isEscalationAvoidanceSearch}}
+
+				{{#isEscalationAvoidanceSearch}}
+					{{#results.article}}
+						{{ sub "article-row-escalation" this }}
+					{{/results.article}}
+				{{else}}
+					{{#results.article}}
+						{{ sub "article-row" this }}
+					{{/results.article}}
+				{{/isEscalationAvoidanceSearch}}
+
+                {{^results.article}}
+                	{{^results.topic}}
+                		{{! in escalation avoidance we only show actual results and don't notify user if none are found }}
+                		{{#unless isEscalationAvoidanceSearch}}
+		                    <div class="selfservice-article-list-empty egce-font-medium">
+		                        {{lang "NO_MATCHES_FOUND"}}
+		                    </div>
+	                    {{/unless}}
+                    {{/results.topic}}
+                {{/results.article}}
+            </ul>
+
+            {{#show_load_more}}
+                <div class="egce-load-more egce-p10 egce-overflowfix js-load-more">
+			        <div class="egce-float-right egce-primary egce-bold" style="background: url(./assets/img/bhs/LoadMore.gif) no-repeat;height: 28px;text-indent: -10000px;width: 92px;">
+			            {{ lang "LOAD_MORE" }}
+			        </div>
+			    </div>
+            {{/show_load_more}}
+
+        </div>
+    </div>
+    <br/>
+
+    <!--- COMMUNITY -->
+    {{#if results.forumPost}}
+    <div class="egce-box-wrap">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{lang "COMMUNITY_SEARCH_RESULTS_FOR" "query" query }}
+            </h1>
+            <p class="selfservice-box-header-side">
+                {{lang "N_RESULTS_FOUND" "count" results.forumPost.length}}
+            </p>
+            <div class="egce-clearfix"></div>
+        </div>
+
+        <ul class="egce-list egce-vertical egce-ruled">
+            {{#results.forumPost}}
+            <li class="egce-list-row">
+                <i class="egce-box-icon icon-comments" style="position:absolute;top:30%;left:10px;font-size:22px"></i>
+                <div style="margin-left:30px">
+	                <a class="egce-block egce-p20"
+	                   href="{{{url}}}">
+	                    {{{subject}}}
+	                </a>
+               </div>
+            </li>
+            {{/results.forumPost}}
+        </ul>
+    </div>
+    {{/if}}
+    <br/>
+
+    {{#if results.intrawebItem}}
+	<!--- INTRAWEB  -->
+    <div class="egce-box-wrap">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{lang "INTRANET_SEARCH_RESULTS_FOR" "query" query }}
+            </h1>
+            <p class="selfservice-box-header-side">
+                {{lang "N_RESULTS_FOUND" "count" results.intrawebItem.length}}
+            </p>
+            <div class="egce-clearfix"></div>
+        </div>
+
+        <ul class="egce-list egce-vertical egce-ruled">
+            {{#results.intrawebItem}}
+            <li class="egce-list-row">
+            	<i class="egce-box-icon icon-sitemap" style="position:absolute;top:30%;left:10px;font-size:22px"></i>
+                <div style="margin-left:30px">
+	                <a class="js-web-item-click egce-block egce-font-medium egce-p20" data-link="{{{link.href}}}"
+	                   href="{{{url}}}"> {{{title}}}
+	                </a>
+               </div>
+            </li>
+            {{/results.intrawebItem}}
+        </ul>
+    </div>
+    <br/>
+    {{/if}}
+
+    {{#if results.webItem}}
+	<!--- WEB  -->
+    <div class="egce-box-wrap">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{lang "WEB_SEARCH_RESULTS_FOR" "query" query }}
+            </h1>
+            <p class="selfservice-box-header-side">
+                {{lang "N_RESULTS_FOUND" "count" results.webItem.length}}
+            </p>
+            <div class="egce-clearfix"></div>
+        </div>
+
+        <ul class="egce-list egce-vertical egce-ruled">
+            {{#results.webItem}}
+            <li class="egce-list-row">
+                <i class="egce-box-icon icon-external-link" style="position:absolute;top:30%;left:10px;font-size:22px"></i>
+                <div style="margin-left:30px">
+	                <a class="js-web-item-click egce-block egce-font-medium egce-p20" data-link="{{{link.href}}}"
+	                   href="{{{url}}}"> {{{title}}}
+	                </a>
+               </div>
+            </li>
+            {{/results.webItem}}
+        </ul>
+    </div>
+    <br/>
+    {{/if}}
+</script>
+
+<script type="template" name="topic-row">
+	<li class="egce-list-row egce-p15">
+		<i class="egce-box-icon icon-folder-open" style="position:absolute;top:30%;left:10px;font-size:22px"></i>
+		<div style="margin-left:30px">
+			<a class="egce-font-medium js-topic-view-click"
+		   	   href="{{ call "buildArticleOrTopicUrl" this "topic"}}">
+		       {{{name}}}
+			</a>
+		</div>
+	</li>
+</script>
+
+<script type="template" name="article-row">
+	<li class="egce-list-row egce-p15">
+		<i class="egce-box-icon {{{ articleIcon }}}" style="position:absolute;top:20%;left:10px;font-size:22px"></i>
+			<div style="margin-left:30px">
+			    <a class="egce-font-medium egce-bold js-article-view-click"
+			       data-article-id="{{this.id}}"
+			       data-article-type="{{ this.articleType }}"
+			       href="{{ call "buildArticleOrTopicUrl" this "article"}}">
+			       {{{name}}}
+			    </a>
+			    <p class="egce-font-medium" >
+			        {{{snippet}}}
+			    </p>
+			</div>
+
+			{{#if searchScoreRounded}}
+			<!--div class="js-match" class="egce-font-large" style="position:absolute; top : 30px; right : 20px; font-size:20px;">
+			    {{searchScoreRounded}} <span style="font-size:13px;color:#666;">{{ lang "SEARCH_SCORE" }}</span>
+			</div-->
+		{{/if}}
+	</li>
+</script>
+<script type="template" name="article-row-escalation">
+	<li class="egce-list-row egce-p15">
+		<i class="egce-box-icon {{{ articleIcon }}}" style="position:absolute;top:20%;left:10px;font-size:22px"></i>
+			<div style="margin-left:30px">
+			    <a class="egce-font-medium egce-bold js-article-view-click" target="_blank"
+			       data-article-id="{{this.id}}"
+			       data-article-type="{{ this.articleType }}"
+			       href="{{ call "buildArticleOrTopicUrl" this "article"}}">
+			       {{{name}}}
+			    </a>
+			    <p class="egce-font-medium" style="padding-bottom:20px; max-width:500px;">
+			        {{{snippet}}}
+			    </p>
+			</div>
+
+			{{#if searchScoreRounded}}
+			<div class="js-match" class="egce-font-large" style="position:absolute; top : 30px; right : 20px; font-size:20px;">
+			    {{searchScoreRounded}} <span style="font-size:13px;color:#666;">{{ lang "SEARCH_SCORE" }}</span>
+			</div>
+		{{/if}}
+	</li>
+</script>
+
+<script type="template" name="divider">
+    <div class="selfservice-list-scroll-divider">
+        <div class="selfservice-list-scroll-divider-text">
+            &uarr; Top {{top_entry_count}} entries
+        </div>
+    </div>
+</script>

@@ -1,0 +1,121 @@
+.content-article{
+
+    overflow : hidden;
+}
+
+.content-article small {
+    
+    font-size : 1.1em;
+    margin-top : 3px;
+    display : block;
+    color : #444;
+}
+
+.content-article p {
+    
+    margin-top : 5px;
+    color : #666;
+    line-height : 1.7em;
+    font-size : 1.1em;
+}
+
+.content-article .selfservice-box-header-side a {
+
+    margin-left : 10px;
+}
+
+.content-article .article-top small {
+    
+    color : #888;
+    font-size : 13px;
+    font-weight : bold;
+    display : block;
+    margin-bottom : 5px;
+}
+
+.content-article .article-content {
+
+    /*border-bottom : 1px solid #ccc;*/
+}
+
+.article-feedback {
+
+    /*border-top : 3px solid #eee;
+    padding : 10px;*/
+    background : #ffffff;
+    padding-bottom: 15px;
+}
+
+.article-feedback h1{
+ 
+    font-weight : bold;
+    color : #f23e39;
+}
+
+.article-feedback textarea {
+	resize: none;
+    width : 680px;
+    height : 50px;
+    font-size : 13px;
+    border: 1px solid #cccccc;
+}
+
+.article-feedback input[type=submit] {
+
+    background: url(./assets/img/bhs/Submit.gif) no-repeat;
+    height: 28px;
+    text-indent: -10000px;
+    width: 72px;
+    border: medium none;
+    bottom: -20px;
+    display: block;
+    float: right;
+    margin-left: 0;
+    margin-top: 5px;
+    padding: 6px 17px;
+    position: absolute;
+    right: 2px;
+}
+.article-feedback span.feedback-counter{
+	display : block; 
+    	height: 9px;
+    	width: 300px;
+    	font-size: 0.85em;
+    	line-height: 1em;
+    	padding-top: 3px;
+}
+#addsolution {
+   margin-top: 14px;
+}
+
+.selfservice-related-cases{
+    display: none;
+}
+
+table.gridtable {
+    font-size : 12px;
+    width: 100%;
+}
+table.gridtable th {
+    text-align:left;
+    font-weight: bold;
+    border-width: 0px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #1797C0;
+    color: white;
+}
+table.gridtable td {
+    border-width: 0px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+td.case-id{
+    font-weight: bold;
+}
+.selfservice-related-articles-title{
+	text-transform:uppercase;
+}

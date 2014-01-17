@@ -1,0 +1,7 @@
+{
+    "path": "list/mysuggestions", 
+    "name": "list-mysuggestions",
+    "title" : "My Suggestions List"
+	"description" : "This component is used to fetch and render the suggestions specific to the user"
+	"author" : "Shivam Pawar"
+}

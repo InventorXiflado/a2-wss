@@ -1,0 +1,383 @@
+<!-- Your CasebaseContentComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-highlighted">
+        <div class="head-gh">
+            {{ lang "GUIDED_HELP" }}
+        </div>
+
+		<div class="cb-name">
+            <div class="egce-bold"> {{ casebaseName }} </div>
+        </div>
+
+        <div class="egce-box-content">
+            <div class="egce-float-left questions-div" id="questions">
+                <ul class="questions">
+                	{{#each answeredQuestions}}
+                        {{ sub "question" this }}
+                    {{/each}}
+
+                	{{#each unansweredQuestions}}
+                        {{ sub "question" this }}
+                    {{/each}}
+                </ul>
+                	<input type="button" class="done-button egce-button egce-primary-no-pad
+                			egce-bold egce-float-left egce-m25-top egce-m15-bottom" value="{{ lang "DONE" }}"></input>
+                	<div class="egce-clearfix"></div>
+				</div>
+				<div class="egce-float-right solutions-div">
+					<div>
+						<img class="selfservice-gh-expert" src="{{ property "gh_expert" }}">
+					</div>
+					<div class="selfservice-gh-solution-header" >
+					{{#if showActionResults}}
+						{{ lang "SOLUTIONS" }}
+					{{else}}
+						{{lang "RECOMMENDED_CASES"}}
+					{{/if}}
+					</div>
+					<div class="selfservice-gh-solution-body">
+					{{#if isEmptySolution}}
+						<h1 class="egce-font-medium egce-bold egce-p10">{{ solutions }}</h1>
+					{{else}}
+						{{#if showActionResults}}
+							<ul class="solutions egce-ruled">
+								{{#each solutions}}
+									{{ sub "solution-action" this }}
+								{{/each}}
+							</ul>
+						{{else}}
+							<ul class="solutions egce-ruled">
+								{{#each solutions}}
+									{{ sub "solution-case" this }}
+								{{/each}}
+							</ul>
+						{{/if}}
+					{{/if}}
+				</div>
+            </div>
+            <div class="egce-clearfix"></div>
+        </div>
+		<div class="messages-container egce-hideelement">
+		</div>
+		<div class="error-container egce-errormsg egce-hideelement">
+		</div>
+		{{#if showDiagnostics.showDiagnostics}}
+			<div class="diagnostics">
+				<div class="diagnostics-head">
+					{{lang "DIAGNOSTICS"}}
+				</div>
+				{{#if showDiagnostics.showControlDiagnostics}}
+					<div class="diagnostics-type-head">
+						{{lang "CONTROL_ACTION_HISTORY"}}
+					</div>
+					<div class="diagnostics-count">
+						{{showDiagnostics.controlCount}} {{lang "CONTROL_ACTIONS_FOUND"}}
+					</div>
+					<ul class="diagnostics-table control-table">
+						{{sub "control-diagnostics-row-head" this}}
+						{{#each diagnostics.controlDiagnostics}}
+							{{ sub "control-diagnostics-row" this }}
+						{{/each}}
+					</ul>
+				{{/if}}
+				{{#if showDiagnostics.showClusterDiagnostics}}
+					<div class="diagnostics-type-head">
+						{{lang "CLUSTER_HISTORY"}}
+					</div>
+					<div class="diagnostics-count">
+						{{showDiagnostics.clusterCount}} {{lang "CLUSTERS_FOUND"}}
+					</div>
+					<ul class="diagnostics-table cluster-table">
+						{{sub "cluster-diagnostics-row-head" this}}
+						{{#each diagnostics.clusterDiagnostics}}
+							{{ sub "cluster-diagnostics-row" this }}
+						{{/each}}
+					</ul>
+				{{/if}}
+			</div>
+		{{/if}}
+    </div>
+</script>
+
+<script type="template" name="question" comment="Template to show expanded question.">
+	<li class="question {{collapsed}}" data-id="{{ id }}" data-format="{{ format }}" data-type="{{ type }}"
+        	data-min-value="{{ validAnswerRange.min }}" data-max-value="{{ validAnswerRange.max }}"
+        	data-min-inclusive="{{ validAnswerRange.minInclusive }}" data-max-inclusive="{{ validAnswerRange.maxInclusive }}">
+		<div class="question-img">
+			<img class="q-image" src="{{ qImageSrc }}"/>
+		</div>
+		<div class="question-container">
+    		<h1 class="selfservice-gh-question-title">
+    			{{ title }}
+    		</h1>
+    		{{#if additionalInfo}}
+          		<div class="egce-hover add-info-expand egce-float-right">
+          			<i class="egce-icon icon-caret-down egce-font-large egce-color-highlighted"></i>
+          			<span class="egce-icon-text egce-font-small">{{lang "MORE_INFO"}}</span>
+         		</div>
+          		<div class="hide-add-info add-info-content egce-float-left egce-font-small egce-p20-left egce-p5-bottom">
+          			{{ additionalInfo }}
+          		</div>
+        	{{/if}}
+        	<div class="egce-clearfix"></div>
+        	<h1 class="previous-answer egce-bold egce-font-medium {{answered}}">
+        		{{ answeredText }}
+        	</h1>
+			{{#if answeredQuestion}}
+				<span class="change-ans">
+					<i class="icon-pencil" />{{lang "EDIT"}}
+				</span>
+			{{/if}}
+
+			<div class="hide-answer-area">
+				<ul class="answers">
+					{{#if isDropDown}}
+						<select name="{{ id }}" {{multiple}}>
+					{{/if}}
+
+					{{#if text}}
+						{{ sub format this }}
+					{{else}}
+						{{#each validAnswer}}
+							{{ sub questionFormat this }}
+						{{/each}}
+					{{/if}}
+
+					{{#if isDropDown}}
+						</select>
+					{{/if}}
+				</ul>
+			</div>
+	  	</div>
+	  	<div class="egce-clearfix"></div>
+    </li>
+</script>
+
+<script type="template" name="1" comment="Template name corresponds to question format: 1 = radio buttons">
+	<li data-id="{{ id }}" class="answer egce-font-medium">
+    	 <div>
+    	 	<input type="radio" name="{{ questionId }}" value="{{ id }}" {{ isSelected }} >
+    	 		<span class="selfservice-gh-answer-select">{{ text }}</span>
+    	 	</input>
+	     </div>
+    </li>
+</script>
+
+
+<script type="template" name="2" comment="Template name corresponds to question format: 2 = drop down">
+	<option value="{{ id }}" {{isSelected}}>
+		{{ text }}
+	</option>
+</script>
+
+<script type="template" name="3" comment="Template name corresponds to question format: 3 = checkboxes">
+	<li data-id="{{ id }}" class="answer egce-font-medium">
+    	 <div class="">
+    	 	<input type="checkbox" class="{{ questionId }} question" value="{{ id }}" {{ isSelected }}>
+    	 		<span class="selfservice-gh-answer-select">{{ text }}</span>
+    	 	</input>
+	     </div>
+    </li>
+</script>
+
+<script type="template" name="4" comment="Template name corresponds to question format: 4 = multi select drop down">
+	<div class="egce-font-medium egce-float-left">
+		<option value="{{ id }}" {{ isSelected }}> {{ text }} </option>
+	</div>
+</script>
+
+<script type="template" name="5" comment="Template name corresponds to question format: 5 = text box">
+	<div class="selfservice-gh-answer">
+     	<input class="selfservice-gh-answer-textbox" type="text" name="{{ id }}" value="{{ answeredText }}" />
+    </div>
+</script>
+
+<script type="template" name="6" comment="Template name corresponds to question format: 6 = text area">
+	<div class="selfservice-gh-answer">
+     	<textarea class="selfservice-gh-answer-textbox" name="{{ id }}" rows="5" cols="40"> {{ answeredText }} </textarea>
+    </div>
+</script>
+
+<script type="template" name="7" comment="Template name corresponds to question format: 7 = text box">
+	<div class="selfservice-gh-answer">
+     	<input class="selfservice-gh-answer-textbox" type="text" name="{{ id }}" value="{{ answeredText }}" />
+    </div>
+</script>
+
+<script type="template" name="8" comment="Template name corresponds to question format: 8 = text box">
+	<div class="selfservice-gh-answer">
+     	<input class="selfservice-gh-answer-textbox" type="text" name="{{ id }}" value="{{ answeredText }}" />
+    </div>
+</script>
+
+<script type="template" name="solution-action">
+    <li id="{{id}}">
+		<div class="solution-row">
+			<div class="solution-name egce-bold">
+				<a class="egce-font-medium" id="{{id}}Name" href="{{call "buildUrl" this }}" target="_blank">
+					{{ shortName }}
+				</a>
+			</div>
+			<div class="solution-score">
+				{{score}}%
+			</div>
+			<div class="accept-reject-buttons-container">
+				<a class="accept-reject-buttons egce-primary egce-a-button accept-solution" id="accept{{id}}">
+					<i class="icon-ok"/><p class="egce-p5-horizontal" style="display:inline;">{{lang "ACCEPT"}}</p>
+				</a>
+				<p class="count-bubble">{{acceptCount}}</p>
+				<a class="accept-reject-buttons reject-solutions egce-dark egce-a-button reject-solution" id="reject{{id}}">
+					<i class="icon-remove"/><p class="egce-p5-horizontal" style="display:inline;">{{lang "REJECT"}}</p>
+				</a>
+				<p class="count-bubble">{{rejectCount}}</p>
+			</div>
+			<div class="egce-clearfix"></div>
+		</div>
+    </li>
+</script>
+
+<script type="template" name="solution-case">
+    <li id="{{id}}">
+		<div class="solution-row">
+			<div class="solution-name">
+				<p class="egce-font-medium egce-bold" id="{{id}}Name">
+					{{ shortName }}
+				</p>
+				<p class="egce-font-small">{{title}}</p>
+			</div>
+			<div class="solution-score">
+				{{score}}%
+			</div>
+			<div class="accept-reject-buttons-container">
+				<a class="accept-reject-buttons egce-primary egce-a-button accept-solution" id="accept{{id}}">
+					<i class="icon-ok"/><p class="egce-p5-horizontal" style="display:inline;">{{lang "ACCEPT"}}</p>
+				</a>
+				<p class="count-bubble">{{acceptCount}}</p>
+				<a class="accept-reject-buttons reject-solutions egce-dark egce-a-button reject-solution" id="reject{{id}}">
+					<i class="icon-remove"/><p class="egce-p5-horizontal" style="display:inline;">{{lang "REJECT"}}</p>
+				</a>
+				<p class="count-bubble">{{rejectCount}}</p>
+			</div>
+			<div class="show-case-details">
+				<i class="icon-chevron-down get-details" id="{{id}}"></i>
+			</div>
+			<div class="egce-clearfix"></div>
+		</div>
+    </li>
+</script>
+
+<script type="template" name="solution-case-details">
+    <li class="case-details" id="details{{id}}">
+		<p class="egce-font-medium">
+			<span class="egce-bold">{{lang "SOLUTION_NUMBER"}} : </span>{{id}}
+		</p>
+		{{#each this.action}}
+			<ul>
+				<li>
+					<a class="egce-font-small" href="{{call "buildUrl" this }}" target="_blank">
+						{{ shortName }}
+					</a>
+				</li>
+			</ul>
+		{{/each}}
+    </li>
+</script>
+
+<script type="template" name="control-diagnostics-row-head">
+	<li class="diagnostics-type-list-head">
+		<div class="control-list-column-one">
+			{{lang "NAME"}}
+		</div>
+		<div class="control-list-column-two">
+			{{lang "SUGGEST_DESCRIPTION"}}
+		</div>
+		<div class="control-list-column-three">
+			{{lang "ID"}}
+		</div>
+		<div class="control-list-column-four">
+			{{lang "SCORE"}}
+		</div>
+		<div class="egce-clearfix"></div>
+	</li>
+</script>
+
+<script type="template" name="control-diagnostics-row">
+	<li>
+		<div class="control-list-column-one">
+			{{shortName}}
+		</div>
+		<div class="control-list-column-two">
+			{{title}}
+		</div>
+		<div class="control-list-column-three">
+			{{id}}
+		</div>
+		<div class="control-list-column-four">
+			{{score}}
+		</div>
+		<div class="egce-clearfix"></div>
+	</li>
+</script>
+
+<script type="template" name="cluster-diagnostics-row-head">
+	<li class="diagnostics-type-list-head">
+		<div class="cluster-list-column-one">
+			{{lang "NAME"}}
+		</div>
+		<div class="cluster-list-column-two">
+			{{lang "SUGGEST_DESCRIPTION"}}
+		</div>
+		<div class="cluster-list-column-three">
+			{{lang "ID"}}
+		</div>
+		<div class="cluster-list-column-four">
+			{{lang "DEPTH"}}
+		</div>
+		<div class="cluster-list-column-five">
+			{{lang "STARTUP"}}
+		</div>
+		<div class="cluster-list-column-six">
+			{{lang "ACTIVE"}}
+		</div>
+		<div class="egce-clearfix"></div>
+	</li>
+</script>
+
+<script type="template" name="cluster-diagnostics-row">
+	<li>
+		<div class="cluster-list-column-one">
+			{{shortName}}
+		</div>
+		<div class="cluster-list-column-two">
+			{{title}}
+		</div>
+		<div class="cluster-list-column-three">
+			{{id}}
+		</div>
+		<div class="cluster-list-column-four">
+			{{depth}}
+		</div>
+		<div class="cluster-list-column-five">
+			{{#if startup}}
+				<input type="checkbox" value="{{ id }}" checked disabled />
+			{{else}}
+				<input type="checkbox" value="{{ id }}" disabled />
+			{{/if}}
+		</div>
+		<div class="cluster-list-column-six">
+			{{#if isActive}}
+				<input type="checkbox" value="{{ id }}" class="active" checked />
+			{{else}}
+				<input type="checkbox" value="{{ id }}" class="active" />
+			{{/if}}
+		</div>
+		<div class="cluster-list-column-seven">
+			{{#unless isActive}}
+			<a class="egce-light egce-a-button replace-button" id="{{id}}">
+				{{lang "REPLACE_ALL"}}
+			</a>
+			{{/unless}}
+		</div>
+		<div class="egce-clearfix"></div>
+	</li>
+</script>

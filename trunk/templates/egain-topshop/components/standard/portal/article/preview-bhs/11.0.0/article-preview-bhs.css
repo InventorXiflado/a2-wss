@@ -1,0 +1,27 @@
+.selfservice-article-preview-image {
+
+    width : 120px;
+    height : 120px;
+    background : #eee;
+}
+
+.selfservice-article-preview-content {
+
+    width : 75%;
+}
+
+.selfservice-article-preview-content p{
+    
+    margin-top : 5px;
+    line-height: 18px;
+}
+
+.selfservice-article-list a {
+
+    border-top : 0 !important;
+}
+
+
+.egce-box-wrap {
+	border-bottom: 0px;
+}

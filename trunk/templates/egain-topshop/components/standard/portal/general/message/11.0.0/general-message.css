@@ -1,0 +1,6 @@
+img {
+    
+    /* same size as its component container*/
+    width : 100%;
+    height : 100%;
+}

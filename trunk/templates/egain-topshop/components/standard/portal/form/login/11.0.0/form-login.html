@@ -1,0 +1,75 @@
+<!-- Your FormLoginComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-secondary">
+
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">{{ lang "LOGIN" }}</h1>
+            <i class="egce-box-icon icon-key"></i>
+            <div class="egce-clearfix"></div>
+        </div>
+
+        <div class="egce-p20" style="background:#fff">
+            <form class="egce-block">
+                <div class="egce-input-text egce-rounded5">
+                    <input id="username" 
+                           class="egce-input-text 
+                                  egce-p5 egce-rounded5
+                                  egce-table-cell
+                                  egce-font-medium
+                                  egce-js-placeholder" 
+                           name="username" 
+                           value="{{lang "LOGINID" }}"
+                           data-placeholder="{{lang "LOGINID" }}"
+                           type="text"/>
+                </div>
+                <div class="egce-input-text egce-m10-top egce-rounded5">
+                    <input id="password" 
+                           class="egce-input-text 
+                                  egce-p5 egce-rounded5
+                                  egce-table-cell
+                                  egce-font-medium
+                                  egce-js-placeholder" 
+                           name="password" 
+                           value="{{lang "PASSWORD" }}"
+                           data-placeholder="{{lang "PASSWORD" }}"
+                           type="password"/>
+                       </div>
+
+                <div class="egce-login-error-msg egce-font-medium" style="display:none">
+                    <span class="icon-warning-sign"></span>
+                    <div id="errormsg">{{ lang "LOGIN_FAILED" }}</div>
+                </div>
+
+                <div style="margin-top:15px">
+                    <div class="egce-float-left">
+                    {{#if showSignUpLink}}
+                        <a class="egce-font-medium" href="{{ pageUrl "signup" }}">{{lang "SIGN_UP_LINK" }}</a>
+                        <br/>
+                    {{/if}}
+                    {{#if showForgotPasswordLink}}
+                        <a class="egce-font-medium" href="{{ pageUrl "forgot_password" }}">{{lang "FORGOT_PASSWORD_TITLE" }}</a>
+                        {{/if}}
+
+                    </div>
+                    <div class="egce-float-right">
+                        <input type="submit" 
+                           class="egce-button egce-primary egce-m20-top" value="{{ lang "LOGIN" }}"
+                           style="text-align:center; margin-left:4px; "/>
+                   </div>
+                    <div class="egce-clearfix"></div>
+                </div>
+
+                <div class="egce-clearfix"></div>
+            </form>
+        </div>
+    </div>
+
+</script>
+
+<script type="template" name="error">
+    Login is unsuccessful. <a href="#" class="reset">Reset Form</a>
+</script>
+
+<script type="template" name="logged_in" comment="Will be shown when the user is logged out.">
+    You are already logged in. <a href="#">Log Out</a>.
+</script>

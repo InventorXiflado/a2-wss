@@ -1,0 +1,171 @@
+<!-- Your CasebaseContentComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-highlighted egce-p15">
+        <div class="egce-bold egce-color-light-grey ">
+            {{ lang "GUIDED_HELP" }}
+            <div class="egce-clearfix"></div>
+        </div>
+		
+		<div class="egce-bold egce-font-large" style="border-bottom : 1px solid #ccc; font-size: 20px; position:relative; padding-top:3px; padding-bottom:3px">
+            <div class="selfservice-title-right-bar"></div>
+            <div class="egce-float-left egce-bold" style="width:80%; font-size:20px"> {{ casebaseName }} </div>
+            <div class="egce-clearfix"></div>
+        </div>
+		
+        <div class="egce-box-content">
+            <div class="egce-float-left" style="width: 60%">
+                <ul class="questions">
+                	{{#each answeredQuestions}}
+                        {{ sub "question" this }}
+                    {{/each}}
+                
+                	{{#each unansweredQuestions}}
+                        {{ sub "question" this }}
+                    {{/each}}
+                </ul>
+                <div class="form-bottom self-service-form-bottom-bar">
+                	<div class="done-button egce-button egce-primary egce-bold egce-float-right">{{ lang "DONE" }}</div>
+                	<div class="egce-clearfix"></div>
+                </div>
+            </div>
+            <div class="egce-float-right " style="width: 38%">
+				<div style="padding : 0px;margin:0px;">
+					<img class="selfservice-gh-expert" src="{{ property "gh_expert" }}">
+				</div>
+				<div class="selfservice-gh-solution-header" >
+                {{ lang "SOLUTIONS" }}
+				</div>
+				<div class="selfservice-gh-solution-body">
+                {{#if isEmptySolution}}
+        			<h1 class="egce-font-medium egce-bold egce-p10">{{ solutions }}</h1>
+        		{{else}}
+        			<ul class="solutions egce-ruled">
+	                	{{#each solutions}}
+	                        {{ sub "solution" this }}
+	                    {{/each}}
+                	</ul>
+        		{{/if}}
+            </div>
+            </div>
+            <div class="egce-clearfix"></div>
+        </div>
+    </div>
+</script>
+
+<script type="template" name="question" comment="Template to show expanded question.">
+      
+    <li class="question {{collapsed}}" data-id="{{ id }}" data-format="{{ format }}" data-type="{{ type }}"
+        data-min-value="{{ validAnswerRange.min }}" data-max-value="{{ validAnswerRange.max }}" 
+        data-min-inclusive="{{ validAnswerRange.minInclusive }}" data-max-inclusive="{{ validAnswerRange.maxInclusive }}"> 
+	  <div style="float:left;margin-right:10px;height:100%"><img class="q-image" src="{{ qImageSrc }}"/></div>
+	  <div class="egce-float-left egce-m10-top egce-m10-bottom" style="width:80%">
+        <h1 class="selfservice-gh-question-title {{answered}}">{{ title }}</h1>
+        {{#if additionalInfo}}
+          <div class="egce-hover add-info-expand egce-float-right">
+          	<i class="egce-icon icon-caret-down egce-font-large egce-color-highlighted"></i>          	
+          	<span class="egce-icon-text egce-font-small">{{lang "MORE_INFO"}}</span>
+          </div>
+          <div class="hide-add-info add-info-content egce-float-left egce-font-small egce-p20-left egce-p5-bottom">{{ additionalInfo }}</div>
+        {{/if}}
+        <div class="egce-clearfix"></div>
+        <h1 class="previous-answer egce-bold egce-font-small">{{ answeredText }}</h1>
+                        
+        <div class="hide-answer-area">
+	        <ul class="answers"> 
+	        	{{#if isDropDown}}
+        			<select name="{{ id }}" {{multiple}}>
+        		{{/if}}
+        		
+        		{{#if text}}
+        			{{ sub format this }}
+        		{{else}}
+        			{{#each validAnswer}}
+	            		{{ sub questionFormat this }}
+	            	{{/each}}
+        		{{/if}}
+	            
+	            {{#if isDropDown}}
+        			</select>
+        		{{/if}}
+	        </ul>
+	    </div>
+	  </div>
+	  <div class="egce-clearfix"></div>
+    </li>
+</script>
+
+<script type="template" name="1" comment="Template name corresponds to question format: 1 = radio buttons">
+
+	<li data-id="{{ id }}" class="answer egce-font-medium egce-bold">
+    	 <div>
+    	 	<input type="radio" name="{{ questionId }}" value="{{ id }}" {{ isSelected }} ><span class="selfservice-gh-answer-select">{{ text }}</span></input>
+	     </div>
+    </li>
+</script>
+
+
+<script type="template" name="2" comment="Template name corresponds to question format: 2 = drop down">
+   	
+	<option value="{{ id }}" {{isSelected}}> {{ text }} </option>
+	
+</script>
+
+<script type="template" name="3" comment="Template name corresponds to question format: 3 = checkboxes">
+   
+	<li data-id="{{ id }}" class="answer egce-font-medium">
+    	 <div class="">
+    	 	<input type="checkbox" class="{{ questionId }}" value="{{ id }}" {{ isSelected }}><span class="selfservice-gh-answer-select">{{ text }}</span></input>
+	     </div>
+    </li>
+</script>
+
+<script type="template" name="4" comment="Template name corresponds to question format: 4 = multi select drop down">
+   	
+	<div class="egce-font-medium egce-float-left">
+		<option value="{{ id }}" {{ isSelected }}> {{ text }} </option>
+	</div>
+</script>
+
+<script type="template" name="5" comment="Template name corresponds to question format: 5 = text box">
+   
+	<div class="selfservice-gh-answer">
+     	<input class="selfservice-gh-answer-textbox" type="text" name="{{ id }}" value="{{ answeredText }}" />
+    </div>
+</script>
+
+<script type="template" name="6" comment="Template name corresponds to question format: 6 = text area">
+   
+	<div class="selfservice-gh-answer">
+     	<textarea class="selfservice-gh-answer-textbox" name="{{ id }}" rows="5" cols="40"> {{ answeredText }} </textarea>
+    </div>
+</script>
+
+<script type="template" name="7" comment="Template name corresponds to question format: 7 = text box">
+   
+	<div class="selfservice-gh-answer">
+     	<input class="selfservice-gh-answer-textbox" type="text" name="{{ id }}" value="{{ answeredText }}" />
+    </div>
+</script>
+
+<script type="template" name="8" comment="Template name corresponds to question format: 8 = text box">
+   
+	<div class="selfservice-gh-answer">
+     	<input class="selfservice-gh-answer-textbox" type="text" name="{{ id }}" value="{{ answeredText }}" />
+    </div>
+</script>
+
+<script type="template" name="solution">
+    <li>
+		<div  class="egce-p5 egce-bold answer-row">
+			<div style="float : left;width:83%" >
+        <a class="egce-font-medium js-article-view-click" href="{{call "buildUrl" this }}">
+            {{ shortName }}
+        </a>
+			</div>
+			<div class="egce-font-super-large" style="float : right" width="11%">
+			{{score}}%
+			</div>
+			<div class="egce-clearfix"></div>
+		</div>
+    </li>
+</script>

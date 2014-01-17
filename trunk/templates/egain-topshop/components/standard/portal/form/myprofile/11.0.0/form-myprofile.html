@@ -1,0 +1,55 @@
+<!-- Your FormLoginComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">{{ lang "MY_PROFILE" }}</h1>
+			<div class="egce-clearfix"></div>
+        </div>
+        <div class="selfservice-box-content" style="background:#fff">
+        	<div class="egce-details-form-wrap">
+				<form class="myprofile-form egce-p15-horizontal" id="myprofileform">
+					{{#attributes}}
+						{{#if this.mandatory}}
+							{{ sub "form-entry-mandatory" this }}
+						{{else}}
+							{{ sub "form-entry" this }}
+						{{/if}}
+					{{/attributes}}
+
+					<div class="egce-details-form-group">
+						<input class="egce-button egce-bold egce-primary egce-font-medium" type="submit" value="{{ lang "SAVE" }}"/>
+					</div>
+            	</form>
+        	</div>
+			<div class="egce-details-form-info">
+				<div class="general-instructions"></div>
+				<div class="mandatory-instructions"></div>
+				<div class="edit-result-notification egce-hideelement"></div>
+				</div>
+			<div class="egce-clearfix"></div>
+		</div>
+    </div>
+</script>
+
+<script type="template" name="form-entry">
+	 <div class="egce-details-form-group egce-m25-top" id="group{{this.name}}">
+	        <div class="egce-details-form-group-label">{{lang this.name}}</div>
+				<div class="egce-input-text egce-rounded5">
+					<input class="egce-input-text egce-font-medium"
+				           type="text" name="{{this.name}}" id="{{this.name}}" />
+				</div>
+				<div id="invalidentry{{this.name}}" class="egce-warning-text"></div>
+     </div>
+</script>
+
+<script type="template" name="form-entry-mandatory">
+	 <div class="egce-details-form-group egce-m25-top" id="group{{this.name}}">
+	        <div class="egce-details-form-group-label">{{lang this.name}}<span class="egce-color-highlighted">*</span></div>
+			<div class="egce-input-text egce-rounded5">
+				<input class="egce-input-text egce-font-medium mandatory-form-input"
+				          type="text" name="{{this.name}}" id="{{this.name}}" />
+			</div>
+			<div id="emptywarn{{this.name}}" class="egce-warning-text"></div>
+	        <div id="invalidentry{{this.name}}" class="egce-warning-text"></div>
+     </div>
+</script>

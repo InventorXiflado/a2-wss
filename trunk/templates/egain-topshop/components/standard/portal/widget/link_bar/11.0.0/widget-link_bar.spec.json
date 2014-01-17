@@ -1,0 +1,19 @@
+{
+    "name": "standard.portal.widget.link_bar",
+    "title" : "Link Bar Widget",
+    "active" : true,
+    "models" : [
+
+        {
+            "name" : "standard.portal.session",
+            "version" : "11.0",
+            "key" : "session"
+        },
+
+        {
+            "name" : "standard.portal.topic",
+            "version" : "11.0",
+            "key" : "topic"
+        }
+    ]
+}

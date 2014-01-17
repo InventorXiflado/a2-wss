@@ -1,0 +1,42 @@
+.section.top{
+    min-height : 70px;
+    height: auto !important; 	/* ie hack */
+    height: 70px; 				/* ie hack */
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+.section.top-lower {
+    min-height : 100px;
+    margin-bottom : 10px;
+}
+
+.section.left{
+	
+    float : left;
+    width : 19%;
+    min-height : 500px;
+    margin-right : 20px;
+}
+
+.section.mid{
+	
+    float : left;
+    width : 58%;
+    min-height: 500px;
+    /* overflow : hidden;  avoid colisions between boxes */
+    word-wrap : break-word;
+}
+
+.section.right{
+
+    float:right;
+    width : 19%;
+    min-height : 500px;
+    margin-left : 10px;
+}
+
+.section.bottom {
+
+    margin-top : 10px;
+}

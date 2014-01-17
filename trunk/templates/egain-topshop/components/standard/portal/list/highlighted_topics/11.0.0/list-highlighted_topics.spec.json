@@ -1,0 +1,15 @@
+{
+    "name": "standard.portal.list.highlighted_topics",
+    "title" : "Highlighted Topics List",
+    "description" : "List of highlighted topics.",
+    "version" : "11.0.0",
+    "active" : true,
+    "models" : [
+
+        {
+            "name" : "standard.portal.topic",
+            "version" : "11.0",
+            "key" : "topic"
+        }
+    ]
+}

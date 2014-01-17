@@ -1,0 +1,22 @@
+.top-bar{
+    
+    overflow : auto;
+    background : #000;
+    margin-bottom : 10px;
+}
+
+.left-column {
+
+    float : left;
+    width: 20%;
+    min-height : 600px;
+}
+
+.right-column {
+    
+    float : left;
+    width : 78%;
+    margin-left : 10px;
+    min-height : 600px;
+    text-align : left;
+}

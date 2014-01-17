@@ -1,0 +1,47 @@
+<!-- Your MenuTree_slideComponent HTML-->
+<script type="template" name="main">
+    
+    <div class="egce-box-wrap">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading"> {{ lang "TOPICS" }} </h1>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <ul class="root selfservice-box-list-menu">
+                {{#topics}}
+                    <li class="root">
+                        <div data-topic-id="{{id}}" data-root-topic-id="{{id}}"
+                             class="level-wrap children root">
+                            <a class="root" data-topic-id="{{id}}" href="#">{{ name }}</a>
+                        </div>
+                    </li>
+                {{/topics}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+<script type="template" name="children-level">
+    <div class="breadcrumb">
+        <span class="previous">&larr;</span>
+        {{{breadcrumb}}}
+    </div>
+    <ul class="children">
+        {{#childrenTopics}}
+            <a data-topic-id="{{id}}" class="child" href="#">{{ name }}</a>
+        {{/childrenTopics}}
+    </ul>
+</script>
+
+<script type="template" name="breadcrumb-label">
+    <a href="#" data-topic-id="{{topic.id}}" class="breadcrumb-label">
+        {{topic.name}}
+    </a>
+</script>
+
+<script type="template" name="loading-overlay">
+    <div class="loading-overlay">
+        <div class="loading-bg"></div>
+        <img src="./selfservice/images/loading.gif"/>
+    </div>
+</script>

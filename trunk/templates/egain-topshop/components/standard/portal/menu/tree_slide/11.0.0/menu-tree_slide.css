@@ -1,0 +1,93 @@
+.component.menu-tree_slide {
+
+    
+}
+
+.component.menu-tree_slide ul li{
+
+    border-bottom : 1px solid #ccc;
+    overflow : hidden;
+}
+
+.component.menu-tree_slide ul li.root {
+
+    border-top : 1px solid #eee;
+}
+
+.component.menu-tree_slide ul li .level-wrap {
+    
+    position : relative;
+}
+
+.component.menu-tree_slide ul li .level-wrap a{
+    
+}
+
+.component.menu-tree_slide ul li .level-wrap a.root{
+
+    background : #fff;
+    padding : 10px;
+    display : block;
+}
+
+.component.menu-tree_slide ul li .level-wrap a.child{
+
+    padding : 10px;
+    padding-left : 18px;
+    display : block;
+}
+
+.component.menu-tree_slide ul li .level-wrap.children {
+    
+    background : #f7f7f7;
+}
+
+.component.menu-tree_slide ul li .level-wrap .child-level {
+
+    background : #f7f7f7;
+    height : 300px;
+    position : absolute;
+    top : 0;
+    left : 100%;
+}
+
+.component.menu-tree_slide ul li .breadcrumb{
+    
+    font-size : 12px;
+    padding : 3px;
+    border-bottom : 1px solid #ccc;
+    background : #fff;
+    background : -webkit-linear-gradient(#fafafa, #eaeaea);
+}
+
+.component.menu-tree_slide ul.children {
+
+    border-top : 2px solid #eee;
+}
+
+.component.menu-tree_slide .loading-overlay {
+
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+}
+.component.menu-tree_slide .loading-overlay .loading-bg{
+
+    background : #fff;
+    opacity : 0.5;
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+
+}
+
+.component.menu-tree_slide .loading-overlay img{
+
+    position : absolute;
+    top : 50%;
+    left : 45%;
+}

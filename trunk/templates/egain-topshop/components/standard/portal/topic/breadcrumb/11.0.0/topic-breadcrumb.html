@@ -1,0 +1,13 @@
+<!-- Your TopicMenu_flyoutComponent HTML-->
+<script type="template" name="main">
+
+    <span class="egce-font-small egce-bold">
+    	<a href="{{ pageUrl "homepage" }}">{{ lang "HOME" }} <span style="color: red">></span> </a>
+        {{#each parentTopics}}
+            <a href="{{ call "buildUrl" this }}">{{ name }}</a> <span> > </span>
+        {{/each}}
+
+        <a href="{{ call "buildUrl" topic }}">{{topic.name}}</a>
+
+    </span>
+</script>

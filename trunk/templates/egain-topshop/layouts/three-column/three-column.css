@@ -1,0 +1,29 @@
+.section.top{
+    min-height : 70px;
+    height: auto !important; 	/* ie hack */
+    height: 70px; 				/* ie hack */
+}
+
+.section.left{
+
+    float : left;
+    width : 14%;
+    min-height : 500px;
+    margin-right : 20px;
+    margin-left : 10px;
+}
+
+.section.mid{
+    
+    float : left;
+    width : 60%;
+    min-height : 500px;
+}
+
+.section.right{
+
+    float:right;
+    width : 18%;
+    min-height : 500px;
+    margin-right : 10px;
+}

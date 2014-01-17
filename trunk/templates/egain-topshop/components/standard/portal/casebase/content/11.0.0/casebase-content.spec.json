@@ -1,0 +1,54 @@
+{
+    "name": "standard.portal.casebase.content",
+    "title" : "Casebase Content",
+    "description" : "Casebase",
+    "active" : true,
+	
+    "property" : [
+
+        {
+            "name" : "casebaseId",
+            "default" : "$PAGE_ARG:0",
+            "title" : "Casebase ID"
+        },
+
+        {
+            "name" : "articlePage",
+            "title" : "Article Page",
+            "type" : "page",
+            "description" : "The article page the article-related solutions should point to."
+        },
+
+        {
+            "name" : "gh_expert",
+            "title" : "Expert Image",
+			"default"  : "./assets/img/expert.png",
+            "description" : "The URL of the expert image on the right side of the component."
+        },
+		
+		{
+            "name" : "answeredQuestionImg",
+            "title" : "Answered Question",
+			"default"  : "./assets/img/q_image_history.png",
+            "description" : "The URL of the expert image on the right side of the component."
+        },
+		
+		{
+            "name" : "questionImg",
+            "title" : "Question Image",
+			"default"  : "./assets/img/q_image_current.png",
+            "description" : "The URL of the expert image on the right side of the component."
+        }
+		
+		
+    ],
+
+    "models" : [
+
+        {
+            "name" : "standard.portal.casebase",
+            "version" : "11.0",
+            "key" : "casebase"
+        }
+    ]
+}

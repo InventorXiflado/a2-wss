@@ -1,0 +1,102 @@
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-primary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{ name }}
+            </h1>
+
+            {{#hasProperty "flyout_image_src"}}
+                <img class="flyout" src="{{ property "flyout_image_src"}}"/>
+            {{/hasProperty}}
+
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <ul class="egce-list egce-vertical egce-ruled">
+                {{#each articles}}
+                    {{sub "row" this}}
+                {{/each}}
+
+                {{^articles}}
+                <li class="selfservice-article-list-empty">
+                    {{lang "NO_RESULTS_AVAILABLE"}}
+                </li>
+            {{/articles}}
+            </ul>
+        </div>
+
+        {{#show_load_more}}
+            <div class="egce-load-more egce-p10 egce-overflowfix">
+                <div class="egce-button
+                            egce-float-right
+                            egce-primary
+                            egce-bold
+                            js-load-more">
+                    {{ lang "LOAD_MORE" }}
+                </div>
+            </div>
+        {{/show_load_more}}
+
+    </div>
+</script>
+
+<script type="template" name="row" comment="Template for the each of the article row.">
+    <li class="egce-list-row">
+        <i class="egce-box-icon {{ articleIcon }}" style="position:absolute;top:33%;left:10px;font-size:22px"></i>
+        <a class="egce-font-medium egce-block egce-p20 js-article-view-click" href="{{call "buildUrl" this }}" style="padding-left:45px">
+            {{ name }}
+        </a>
+    </li>
+</script>
+
+<script type="template" name="divider" comment="Template for the load more divider.">
+    <div class="selfservice-list-scroll-divider">
+        <div class="selfservice-list-scroll-divider-text">&uarr; {{lang "TOP_N_ENTRIES" "count" top_entry_count}}</div>
+    </div>
+</script>
+
+<script type="template" name="old">
+    <div class="selfservice-box-wrap">
+        <div class="selfservice-box-header">
+            <h1 class="selfservice-box-header-heading">
+                {{ lang "POPULAR_ARTICLES"}}
+            </h1>
+            <p class="selfservice-box-header-side">
+                {{ lang "POPULAR_ARTICLES_AMONG_CUSTOMER"}}
+            </p>
+        </div>
+        <ul class="selfservice-article-list">
+
+            {{#each articles}}
+                {{sub "row" this}}
+            {{/each}}
+
+            {{^articles}}
+                <li class="selfservice-article-list-empty">
+                    {{lang "NO_RESULTS_AVAILABLE"}}
+                </li>
+            {{/articles}}
+        </ul>
+
+        {{#if show_load_more}}
+            <div class="js-load-more selfservice-article-list-load-more">
+                {{ lang "LOAD_MORE" }}
+            </div>
+        {{/if}}
+
+    </div>
+</script>
+
+<script type="template" name="row" comment="Template for the each of the article row.">
+    <li>
+        <a class="selfservice-article-link" href="{{call "buildUrl" this }}">
+            {{ name }}
+        </a>
+    </li>
+</script>
+
+<script type="template" name="divider" comment="Template for the load more divider.">
+    <div class="selfservice-list-scroll-divider">
+        <div class="selfservice-list-scroll-divider-text">&uarr; {{lang "TOP_N_ENTRIES" "count" top_entry_count}}</div>
+    </div>
+</script>

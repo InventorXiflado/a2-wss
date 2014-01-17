@@ -1,0 +1,84 @@
+
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-secondary">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading"> {{ lang "SEARCH_REFINEMENT" }} </h1>
+            <div class="egce-clearfix"></div>
+        </div>
+        
+        <div class="egce-box-content" >
+        	<form id ="refinement-form">
+	        	<ul class="refinement-options">
+	        		{{#each filterAttributes}}
+	        			{{ sub "attribute" this }}
+	                {{/each}}
+	            </ul>
+            </form>
+            <div class="egce-m10-bottom egce-m10-right">
+            	<input type="submit" class="filter-button egce-button egce-primary egce-bold egce-float-right" value="{{ lang "FILTER" }}"/>
+            	<div class="egce-clearfix"></div>
+            </div>
+        </div>
+        <div class="egce-clearfix"></div>
+    </div>
+</script>
+
+<script type="template" name="attribute" comment="Template to show a search refinement attribute">
+      
+    <li class="attribute egce-p10">
+        <h1 class="egce-bold egce-font-large">{{ externalName }}</h1>
+         <ul class="values">
+        		{{#if isEnumerated}}
+        			{{#if isMultiselect}}
+        				{{#each value}}
+        					{{ sub "checkboxes" this }}
+        				{{/each}}
+        			{{else}}
+        				{{#each value}}
+        					{{ sub "radioButton" this }}
+        				{{/each}}
+        			{{/if}}
+	            	
+        		{{else}}
+        			{{ sub "textbox" this }}
+        		{{/if}}
+	        </ul>
+    </li>
+</script>
+
+<script type="template" name="checkboxes">
+	  
+	<li>
+    	 <div class="egce-float-left">
+    	 	<input type="checkbox" name="{{ attrInternalName }}" value="{{ internalValue }}" {{ isChecked }} />
+    	 </div>
+    	 <div class="text-wrap">
+	     	<p class="egce-font-small">{{ externalValue }}</p>
+	     </div>
+	     <div class="egce-clearfix"></div>
+    </li>
+</script>
+
+<script type="template" name="radioButton">
+   
+	<li>
+    	 <div class="egce-font-medium egce-float-left">
+    	 	<input type="radio" name="{{ attrInternalName }}" value="{{ internalValue }}" {{ isChecked }} />
+    	 </div>
+    	 <div class="text-wrap">
+	     	<p class="egce-font-small">{{ externalValue }}</p>
+	     </div>
+	     <div class="egce-clearfix"></div>
+    </li>
+</script>
+
+<script type="template" name="textbox">
+   
+	<li>
+	<div class="egce-font-medium ">
+     	<input type="text" name="{{ internalName }}" value="{{ priorText }}" />
+    </div>
+    </li>
+</script>
+
+

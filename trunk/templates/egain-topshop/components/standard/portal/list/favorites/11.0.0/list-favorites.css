@@ -1,0 +1,15 @@
+.egce-list-row {
+    text-align: left;
+    
+}
+.egce-box-header-close{
+    font-family: Arial;
+    font-size: 11px;
+    padding-right: 37px;
+    text-align: right;
+}    
+
+.egce-modal-close-button {
+	top: 22px !important
+
+}

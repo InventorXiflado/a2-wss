@@ -1,0 +1,16 @@
+{
+    "name" : "standard.portal.form.signup",
+    "title" : "Signup Form",
+    "version" : "11.0.4",
+    "description" : "The signup form.",
+    "author" : "Garindra Prahandono",
+    "active" : true,
+    "models" : [
+
+        {
+            "name" : "standard.portal.customer",
+            "version" : "11.0.4",
+            "key" : "customer"
+        }
+    ]
+}

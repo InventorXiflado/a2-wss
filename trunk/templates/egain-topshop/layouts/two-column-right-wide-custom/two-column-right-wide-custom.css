@@ -1,0 +1,38 @@
+.section.header {
+
+    margin-bottom : 10px;
+    *zoom : 1;
+}
+
+.centers { 
+
+    width : 960px;
+    margin : 0 auto;
+}
+
+.section.left {
+
+    float : left;
+    width : 22%;
+}
+
+.section.right {
+
+
+    float : right;
+    width : 76%;
+}
+
+.clear {
+
+    clear : both;
+}
+
+.section.footer { 
+    margin-top : 15px;
+}
+
+.component {
+    *display: inline-block;
+    *zoom: 1;
+}

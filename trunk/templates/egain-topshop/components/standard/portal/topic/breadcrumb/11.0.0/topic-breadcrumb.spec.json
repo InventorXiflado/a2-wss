@@ -1,0 +1,22 @@
+{
+    "name": "standard.portal.topic.breadcrumb",
+    "title" : "Topic Breadcrumb",
+    "active" : true,
+    "description" : "Breadcrumb showing the hierarchy of a topic tree.",
+    "models" : [
+    
+        {
+            "key" : "topic",
+            "version" : "11.0",
+            "name" : "standard.portal.topic"
+        }
+    ],
+    "property" : [
+
+    	{
+    		"name" : "topicId",
+    		"default" : "1000",
+            "title" : "Topic ID"
+    	}
+    ]
+}

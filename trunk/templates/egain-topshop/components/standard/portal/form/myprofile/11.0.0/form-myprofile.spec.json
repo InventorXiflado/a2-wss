@@ -1,0 +1,9 @@
+{
+    "name" : "form-myprofile",
+    "title" : "My Profile Form",
+    "description" : "This form.lets the user edit her details",
+    "author" : "Shivam Pawar",
+    "properties" : {
+    
+    }
+}

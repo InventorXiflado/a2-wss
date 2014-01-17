@@ -1,0 +1,16 @@
+{
+    "title":"Community Widget",
+    "name": "standard.portal.widget.community",
+    "description" : "Shows information about the community.",
+    "version" : "11.0.0",
+    "active" : true,
+    "author" : "Garindra Prahandono",
+    "models" : [
+
+        {
+            "name" : "standard.portal.community",
+            "version" : "11.0",
+            "key" : "community"
+        }
+    ]
+}

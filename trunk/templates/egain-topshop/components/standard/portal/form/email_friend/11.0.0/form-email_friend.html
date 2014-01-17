@@ -1,0 +1,96 @@
+<!-- Your FormEmail_friendComponent HTML-->
+<script type="template" name="main">
+	<div class="egce-box-header-close">
+
+	</div>
+    <div class="egce-box-wrap egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading" style="padding-left: 5px">{{ lang "ARTICLE_EMAIL_FRIEND" }}</h1>
+            <div class="egce-clearfix"></div>
+        </div>
+
+        <div class="egce-box-content">
+            <form class="egce-block" style="background:#fff;padding:14px">
+                <div class="egce-float-left">
+                    <div class="egce-input-text egce-rounded5" style="width:225px;padding-bottom: 1px">
+                        <input id="username" 
+                               class="egce-input-text
+                                      egce-p5
+                                      egce-table-cell
+                                      egce-js-placeholder
+                                      egce-font-medium"
+                               name="sender_name"
+                               value="{{ lang "YOUR_NAME"}}"
+                               data-placeholder="{{ lang "YOUR_NAME"}}"
+                               type="text"/>
+                    </div>
+
+                    <div class="egce-input-text egce-rounded5" style="width:225px;margin-top: 14px;padding-bottom: 1px">
+                        <input id="username"
+                               class="egce-input-text
+                                      egce-p5
+                                      egce-table-cell
+                                      egce-js-placeholder
+                                      egce-font-medium"
+                               name="sender_email"
+                               value="{{ lang "YOUR_EMAIL"}}"
+                               data-placeholder="{{ lang "YOUR_EMAIL"}}"
+                               type="text"/>
+                    </div>
+                </div>
+
+                <div class="egce-float-right">
+                    <div class="egce-input-text egce-rounded5" style="width:225px;padding-bottom: 1px">
+                        <input id="username"
+                               class="egce-input-text
+                               egce-p5
+                                      egce-rounded5
+                                      egce-table-cell
+                                      egce-js-placeholder
+                                      egce-font-medium"
+                               name="receiver_name"
+                               value="{{ lang "YOUR_FRIEND_NAME"}}"
+                               data-placeholder="{{ lang "YOUR_FRIEND_NAME"}}"
+                               type="text"/>
+                    </div>
+                    <div class="egce-input-text egce-rounded5" style="width:225px;margin-top: 14px;padding-bottom: 1px">
+                        <input id="username"
+                               class="egce-input-text
+                                      egce-p5
+                                      egce-table-cell
+                                      egce-rounded5
+                                      egce-js-placeholder
+                                      egce-font-medium"
+                               name="receiver_email"
+                               value="{{ lang "YOUR_FRIEND_EMAIL"}}"
+                               data-placeholder="{{ lang "YOUR_FRIEND_EMAIL"}}"
+                               type="text"/>
+                    </div>
+                </div>
+
+                <br/>
+                <div class="egce-clearfix"></div>
+                <br/>
+                <div class="overflow:hidden">
+                    <textarea class="egce-rounded5
+                                    egce-p5
+                                    egce-js-placeholder
+                                    egce-block
+                                    egce-font-medium"
+                                    style="margin-bottom: 14px;width:455px;border:1px solid #ccc;resize: none;height: 160px;" data-placeholder="{{lang "COMMENTS"}}">{{lang "COMMENTS"}}</textarea>
+
+                    <div class="egce-clearfix"></div>
+                    <input type="submit"
+                    class="egce-button egce-bold egce-block" value="{{ lang "SEND" }}"
+                           style="background: url('./assets/img/bhs/Send.gif') no-repeat scroll 0 0 transparent;border: medium none;float: right;height: 28px;text-indent: -10000px;width: 58px;"/>
+                    <div class="egce-clearfix"></div>
+                    <div class="egce-clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script type="template" name="success" device="normal">
+    <span class="egce-font-medium">{{ lang "SUCCESSFULLY_SENT_MAIL" }}</span>
+</script>

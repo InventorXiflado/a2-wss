@@ -1,0 +1,7 @@
+{
+    "name" : "menu-tree",
+    "title" : "Menu Tree",
+    "path" : "menu/tree",
+    "description" : "Shows the topics of the portal in a tree structure.",
+    "author" : "Mariz Melo & Garindra Prahandono"
+}

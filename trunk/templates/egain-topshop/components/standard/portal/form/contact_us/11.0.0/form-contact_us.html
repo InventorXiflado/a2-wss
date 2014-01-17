@@ -1,0 +1,89 @@
+<!-- Your FormLoginComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">{{ lang "CONTACT_US" }}</h1>
+			<div class="egce-clearfix"></div>
+        </div>
+        <div class="selfservice-box-content">
+            <form class="selfservice-form">
+                <div style="display:block; overflow:hidden;">
+                    <div class="egce-float-left"style="width:48%">	
+                        <div class="egce-input-text egce-rounded5 egce-p5" >
+                            <input  style="border: 0px" class="egce-input-text 
+                                           egce-js-placeholder
+                                          egce-table-cell
+                                          egce-font-medium" 
+                               type="text" name="name" value="{{lang "NAME"}}" data-placeholder="{{lang "NAME"}}"/>
+                        </div>
+                    </div>
+                    <div class="egce-float-right"style="width:48%">
+                        <div class="egce-input-text egce-rounded5 egce-p5" >
+                            <input style="border: 0px" class="egce-input-text 
+                                           egce-js-placeholder
+                                          egce-table-cell
+                                          egce-font-medium" 
+                               type="text" name="email" value="{{lang "EMAIL_ADDRESS"}}" data-placeholder="{{lang "EMAIL_ADDRESS"}}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="egce-clearfix"></div>
+            <br/>
+
+                <div style="clear:both"></div>
+
+                <div style="padding-top:10px;padding-bottom:10px;overflow:hidden;">
+                    <select style="height: 30px" class="egce-input-text 
+                                      egce-p5 
+                                      egce-table-cell
+                                      egce-font-medium" >
+                        <option value="-1">{{lang "PICK_TOPIC"}}</option>
+                            {{#each topics}}
+                                <option value="{{this.id}}">{{this.name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                <div class="egce-clearfix"></div>
+            <br/>
+            <div style="clear:both"></div>
+                <div class="egce-input-text egce-rounded5 egce-p5" style="overflow:hidden">
+                    
+                    <input style="border: 0px" class="egce-input-text 
+                                       egce-js-placeholder
+                                      egce-table-cell
+                                      egce-font-medium" 
+                            type="text" name="subject" value="{{lang "SUBJECT"}}" data-placeholder="{{lang "SUBJECT"}}"/>
+                </div>
+				
+			<div style="overflow:hidden">
+                <div class="egce-clearfix"></div>
+
+            
+                <textarea class="egce-m15-top  
+                                 egce-m15-bottom 
+                                 egce-font-medium 
+                                egce-block 
+                                egce-rounded5 
+                                egce-p5
+                                egce-js-placeholder" style="width:98%;background:#f7f7f7;border:1px solid #ccc;" name="description" data-placeholder="{{lang "MESSAGE"}}">{{lang "MESSAGE"}}</textarea>
+
+				<div class="egce-clearfix"></div>
+                <input class="egce-button egce-primary egce-bold" style="width:100px;text-align:center; margin-left:4px;float:right;display:block;" value="{{ lang "SUBMIT" }}" type="submit"/>
+				<div class="egce-clearfix"></div>
+            </form>
+        </div>
+    </div>
+
+</script>
+
+<script type="template" name="sent">
+    <div class="egce-p15 egce-font-medium" style="background:#f7f7f7;border:1px solid #ccc;">
+        {{lang "EMAIL_SENT"}}
+    </div>
+</script>
+
+<script type="template" name="error">
+    <div class="egce-p15 egce-font-medium" style="background:#f7f7f7;border:1px solid #ccc;">
+        {{lang "ESCALATION_ERROR"}}
+    </div>
+</script>

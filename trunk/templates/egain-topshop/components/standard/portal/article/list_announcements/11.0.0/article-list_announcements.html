@@ -1,0 +1,61 @@
+<!-- Your ArticleList_announcementsComponent HTML-->
+<script type="template" name="main">
+	<div class="egce-box-wrap egce-primary egce-highlighted">
+	    <div class="egce-box-header" style="">
+	        <h1 class="egce-box-heading">
+	            {{ lang "ANNOUNCEMENTS"}}
+	        </h1>
+
+            {{#hasProperty "flyout_image_src" }}
+                <img class="flyout" src="{{ property "flyout_image_src" }}"/>
+            {{/hasProperty}}
+
+            <div class="egce-clearfix"></div>
+
+	    </div>
+        <div class="egce-box-content">
+            <ul class="egce-list egce-ruled">
+
+                {{#announcements}}
+                    {{sub "row" this}}
+                {{/announcements}}
+
+                {{^announcements}}
+                    <p class="egce-font-medium egce-p20">
+                        {{lang "NO_RESULTS_AVAILABLE"}}
+                    </p>
+                {{/announcements}}
+				<div style="clear: both"></div>
+            </ul>
+
+            {{#if show_load_more}}
+                <div class="js-load-more selfservice-article-list-load-more">
+                    {{ lang "LOAD_MORE" }}
+                </div>
+            {{/if}}
+        </div>
+	</div>
+</script>
+
+<script type="template" name="row" comment="Template for the each of the article row.">
+    <li class="egce-list-row" style="outline: none;vertical-align: bottom">
+
+        <i class="egce-box-icon icon-bullhorn" style="position:absolute;top:15px;left:10px;font-size:22px"></i>
+        <a class="egce-block egce-p20 js-article-view-click" rel="{{ id }}" href="{{call "buildUrl" this }}" style="padding-left:45px;outline: none">
+            {{ name }}
+        </a>
+        <ul style="margin-top: -10px">
+			<li class="egce-block egce-announcement js-announcement-accordion">
+				<span class="announcement-content"></span>
+			</li>
+        </ul>
+        <div style="clear: both"></div>
+    </li>
+
+</script>
+
+<script type="template" name="divider" comment="Template for the load more divider.">
+    <div class="selfservice-list-scroll-divider">
+        <div class="selfservice-list-scroll-divider-text">&uarr; {{lang "TOP_N_ENTRIES" "count" top_entry_count}}</div>
+    </div>
+</script>

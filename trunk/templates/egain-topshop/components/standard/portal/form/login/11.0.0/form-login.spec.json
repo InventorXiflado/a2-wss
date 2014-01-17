@@ -1,0 +1,33 @@
+{
+    "name" : "standard.portal.form.login",
+    "title" : "Login Form",
+    "active" : "true",
+    "description" : "The login form.",
+    "models" : [
+
+        {
+            "name" : "standard.portal.session",
+            "version" : "11.0",
+            "key" : "session"
+        }
+	],
+	
+	"property" : [
+
+        {
+            "name" : "signup",
+            "title" : "Register Page",
+            "type" : "page",
+            "description" : "The page which the user can sign up."
+        },
+		
+				
+		{
+            "name" : "forgot_password",
+            "title" : "Forgot Passsword",
+            "type" : "page",
+            "description" : "The page which the user can reset their password."
+        }
+		
+    ]		  
+}

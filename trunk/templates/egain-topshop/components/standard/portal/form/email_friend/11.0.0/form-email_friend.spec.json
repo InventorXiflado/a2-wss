@@ -1,0 +1,14 @@
+{
+    "name": "standard.portal.form.email_friend",
+    "title" : "Email Friend Form",
+    "active" : true,
+    "author" : "Garindra Prahandono",
+    "models" : [
+
+        {
+            "name" : "standard.portal.email",
+            "version" : "11.0",
+            "key" : "email"
+        }
+    ]
+}

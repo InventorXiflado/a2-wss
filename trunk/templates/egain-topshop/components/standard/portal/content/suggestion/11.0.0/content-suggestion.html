@@ -1,0 +1,76 @@
+<script type="template" name="main">
+	<div class="egce-box-wrap suggestion-details">
+		<div class="name egce-border-bottom egce-float-left">
+			<div class="head-indicator egce-float-left" />
+			<div class="egce-p15">{{suggestion.name}}</div>
+		</div>
+		<div class="egce-clearfix"></div>
+		<div class="description egce-p15">
+			{{suggestion.description}}
+		</div>
+		<div class="content egce-p15 egce-border-bottom">
+			<div class="heading">
+			<span class="headinglabel">
+				{{lang "YOUR SUGGESTION"}}
+			</span>
+			<span class="edit-suggestion-option egce-hideelement egce-p10-horizontal">
+				<i class="icon-pencil" />{{lang "EDIT"}}
+			</span>
+			</div>
+			<div class="value egce-p15-top" id="suggestioncontent">
+				{{{suggestion.content}}}
+			</div>
+			<div class="submit-button egce-p10">
+				<input class="egce-button egce-primary egce-bold egce-invisible-element" style="width:80px;text-align:center;float:right;"
+					  type="button" value='{{lang "SUBMIT"}}' id="modifysuggestion"/>
+		</div>
+			<div class="egce-clearfix"></div>
+		</div>
+		<div class="comment egce-p15-left egce-p15-right egce-p10-bottom egce-border-bottom">
+			<div class="heading">
+				{{lang "COMMENTS"}}
+			</div>
+			<div class="value">
+				<ul>
+				{{#suggestion.tssEvent}}
+					{{sub "showcomment" this}}
+				{{/suggestion.tssEvent}}
+				</ul>
+				{{#unless suggestion.commentspresent}}
+					<div class="commentdata egce-m15-left egce-font-medium">
+						{{lang "NO COMMENTS"}}
+					</div>
+				{{/unless}}
+			</div>
+		</div>
+		<div class="otherinfo egce-p15 egce-border-bottom">
+			<div class="heading">
+				{{lang "MODIFIED BY"}}:
+			</div>
+			<div class="value">
+				{{suggestion.lastModifiedByUserName}}
+			</div>
+			<div class="seperator">|</div>
+			<div class="heading">
+				{{lang "NEXT APPROVER"}}:
+			</div>
+			<div class="value">
+				{{suggestion.nextApprover}}
+			</div>
+			<div class="egce-clearfix"></div>
+		</div>
+	</div>
+</script>
+
+<script type="template" name="showcomment">
+	{{#if this.comment}}
+		<li>
+			<div class="commentcontent egce-m10-top">
+				{{{this.content}}}
+			</div>
+			<div class="commentdetails">
+				{{lang "POSTED ON"}} {{this.createdDate}} {{lang "BY"}} {{this.createdByUserName}}
+			</div>
+		</li>
+	{{/if}}
+</script>

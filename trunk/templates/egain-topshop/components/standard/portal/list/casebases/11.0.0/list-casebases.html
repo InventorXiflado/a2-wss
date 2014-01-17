@@ -1,0 +1,22 @@
+<!-- Your ListCasebasesComponent HTML-->
+<script type="template" name="main">
+    <div class="egce-box-wrap egce-primary egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">
+                {{ lang "CASEBASES" }}
+            </h1>
+            <div class="egce-clearfix"></div>
+        </div>
+        <div class="egce-box-content">
+            <ul class="egce-list egce-vertical egce-ruled">
+            {{#casebases}}
+                <li class="egce-list-row">
+                    <a class="egce-font-medium egce-block egce-p20" href="{{ call "buildUrl" this }}">
+                        {{ title }}
+                    </a>
+                </li>
+            {{/casebases}}
+            </ul>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,39 @@
+<!-- Your FormSuggestionComponent HTML-->
+<script type="template" name="main">
+	<div class="egce-box-wrap egce-highlighted">
+        <div class="egce-box-header">
+            <h1 class="egce-box-heading">{{ lang "MAKE_SUGGEST" }}</h1>
+			<div class="egce-clearfix"></div>
+        </div>
+        <div class="selfservice-box-content">
+        	<p class="egce-font-large">{{ lang "SUGGESTION_PROMPT" }}</p>
+        	<form>
+        		<div class="egce-float-left egce-input-text egce-rounded5 egce-m10-top">
+					<input class="egce-input-text egce-p5 egce-font-medium" 
+				           type="text" name="article.name" id="article.name" value="{{ lang "SUGGEST_NAME" }}"/>
+				</div>
+				<div class="egce-clearfix"></div>
+					
+				<div class="egce-float-left egce-input-text egce-rounded5 egce-m10-top">
+					<input class="egce-input-text egce-p5 egce-font-medium" 
+						   type="text" id="article.description" name="article.description" value="{{ lang "SUGGEST_DESCRIPTION" }}"/>
+				</div>
+				<div class="egce-clearfix"></div>
+				<textarea class="egce-input-text egce-m10-top egce-rounded5 egce-p5" id="article.content" name="article.content"
+				          style="width:98%; height:200px">{{ lang "SUGGEST_CONTENT_PROMPT" }}</textarea>
+				<div class="egce-clearfix"></div>
+				
+				<input class="egce-button egce-primary egce-bold egce-m10-top" style="width:100px;text-align:center; margin-left:4px;float:right" 
+				       type="submit" value="{{ lang "SUGGEST" }}"/>
+				<div class="egce-clearfix"></div>
+				
+        	</form>
+        </div>
+    </div>
+</script>
+
+<script type="template" name="suggest_submitted">
+    <div class="egce-p15 egce-font-medium" style="background:#f7f7f7;border:1px solid #ccc;">
+        {{lang "SUGGESTION_SENT"}}
+    </div>
+</script>

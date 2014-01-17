@@ -1,0 +1,25 @@
+{
+    "title" : "Article Preview",
+    "name": "standard.portal.article.preview",
+    "version" : "11.0.0",
+    "active" : true,
+        
+    "property" : [
+
+        {
+            "name" : "topic_id",
+            "default" : 1000,
+            "title" : "Topic ID"
+        }
+    ],
+
+    "models" : [
+
+        {
+
+            "name" : "standard.portal.article",
+            "version" : "11.0",
+            "key" : "article"
+        }
+    ]
+}

@@ -1,0 +1,1314 @@
+{
+  "locale": "EN_US",
+  "theme": "sunburst",
+  "session_cookie_timeout": 900,
+  "login_page" : "login",
+  "base_url" : "portal/:id",
+  "portal_id" : "$BASE-ARGUMENT:0",
+
+  "projectVars" : {
+
+      "portalId" : "$BASE_ARG:0",
+      "loginPage" : "login",
+      "sessionCookieTimeout" : 900,
+      "baseUrl" : "/system/ws/v11"
+  },
+
+   "models": [
+
+        {
+            "id" : 1,
+            "path" : "standard.portal.article",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11",
+                "rateUpScore" : 20,
+                "rateDownScore" : 5 
+            }
+        },
+
+        {
+            "id" : 2,
+            "path" : "standard.portal.favorite",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11"
+            }
+        },
+
+        {
+
+            "id" : 3,
+            "path" : "standard.portal.dfaq",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11"
+            }
+        },
+
+        {
+
+            "id" : 4,
+            "path" : "standard.portal.topic",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11"
+            }
+        },
+
+        {
+
+            "id" : 5,
+            "path" : "standard.portal.search",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11"
+            }
+        },
+        
+        {
+
+            "id" : 6,
+            "path" : "standard.portal.community",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11"
+            }
+        },
+
+        {
+
+            "id" : 7,
+            "path" : "standard.portal.casebase",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11"
+            }
+        },
+
+        {
+
+            "id" : 8,
+            "path" : "standard.portal.email",
+            "version" : "11.0",
+            "properties" : {
+
+                "baseUrl" : "/system/ws/v11"
+            }
+        }
+   ],
+
+  "shared_sections" : {
+
+        "site-header": {
+            
+          "project_id": 41,
+          "id": 30,
+          "floated" : true,
+          "components": [
+
+            {
+              "name": "standard.portal.image.logo",
+              "version" : "11.0.0",
+              "section_id": 30,
+              "properties": {
+                
+                  "image_url" : "./assets/img/KnowledgeBase_logo.png",
+                  "linked_page" : "homepage"
+              },
+
+              "styles": {
+
+                  "__root__" : {
+
+                      "position":"absolute",
+                      "width" : "210px",
+                      "height" : "65px",
+                      "bottom" : "0px"
+                  }
+              },
+              "position": 0,
+              "project_id": 41,
+              "id": 86
+            },
+
+            {
+              "name": "standard.portal.search.bar",
+              "version" : "11.0.0",
+              
+              "styles": {
+
+                  "__root__" : {
+
+                    "float":"right", 
+                    "width":"705px",
+                    "-webkit-border-radius" : "5px",
+                    "-moz-border-radius" : "5px",
+                    "border-radius" : "5px",
+                    "padding" : "5px 5px",
+                    "margin-bottom" : "10px"
+                  }
+              },
+              
+              "section_id": 30,
+              "properties": {
+
+                "placeholder_text": "Search for Articles, Topics, or Casebases...",
+                "search_page" : "search",
+                "topic_page" : "topic",
+                "article_page" : "article",
+                "casebase_page" : "casebase"
+              },
+              "position": 1,
+              "project_id": 41,
+              "id": 86,
+              "models" : {
+
+                    "search" : {
+
+                        "id" : 5
+                    }
+              }
+            }
+          ],
+
+          "name": "header",
+          "styles" : {
+
+            "__root__":{
+
+                "padding" : "15px 10px 0 10px",
+                "position" : "relative",
+                "background":"black",
+                "border-bottom-left-radius" : "5px",
+                "border-bottom-right-radius" : "5px"
+            }
+          }
+        },
+
+        "side-menu": {
+
+           "components": [
+
+	           {
+                  "styles": {
+
+                    "__root__": {
+
+                      "margin-left": "0px"
+                    }
+                  },	
+                  "version" : "1.0.0",
+                  "type" : "standard",
+	              "position": 0,
+	              "section_id": 32,
+	              "project_id": 41,
+	              "id": 93,
+	              "name": "standard.portal.topic.menu_flyout",
+                  "models" : {
+
+                    "topic" : {"id" : 4}
+                  }
+	            },
+
+            {
+              "styles": {
+                "__root__": {
+                  "margin-top": "15px",
+                  "margin-left": "0px"
+                }
+              },
+              "name": "standard.portal.widget.community",
+              "section_id": 26,
+              "position": 0,
+              "project_id": 41,
+              "id": 80,
+              "initialize" : "$PORTAL_SETTING:enableSearchCommunity",
+              "models" : {
+
+                "community" : {
+
+                    "id" : 6
+                }
+              }
+            },
+            {
+              "styles": {
+                "__root__": {
+                  "margin-top": "15px",
+                  "margin-left": "0px"
+                }
+              },
+              "position": 0,
+              "section_id": 35,
+              "project_id": 41,
+              "id": 97,
+              "name": "standard.portal.widget.quicklinks",
+              "cacheable" : true,
+              "properties" : {
+
+                "links" : [
+
+                    {"text":"Guided Help", "page":"casebases"}
+                ]
+              }
+            }
+                
+       		],
+
+            "name":"left",
+            "id" : "1004"
+        },
+
+        "site-footer" : {
+
+            "components" : [
+
+	           {
+                  "styles": {
+
+                    "__root__": {
+
+                      "margin-left": "0px",
+                      "margin-top": "30px"
+                    }
+                  },	
+                  "version" : "1.0.0",
+                  "type" : "standard",
+	              "position": 0,
+	              "section_id": 32,
+	              "project_id": 41,
+	              "id": 93,
+	              "name": "standard.portal.widget.link_bar"
+	          }
+            ],
+
+            "styles" : {
+
+                "__root__": {}
+            },
+
+            "id" : "1005"
+        }
+  },
+
+  "pages": [
+
+    {
+      "layout": "three-column-top",
+      "name": "homepage2",
+      "url": "old",
+      "project_id": 41,
+      "sections": [
+
+        {
+            "name": "header",
+            "shared_section" : "site-header"
+        },
+
+        {
+            "name" : "footer",
+            "shared_section" : "site-footer"
+        },
+
+        {
+          "project_id": 41,
+          "id": 22,
+          "components": [
+            {
+              "styles": {
+                "__root__": {
+                  "margin-top": "15px",
+                  "margin-left": "1px"
+                  }
+              },
+              "name": "standard.portal.list.highlighted_topics",
+              "section_id": 22,
+              "position": 2,
+              "project_id": 41,
+              "cacheable" : true,
+              "id": 87
+            },
+            {
+              "styles": {
+                  
+                "__root__" : {
+
+                    "margin-top" : "10px"
+                }
+              },
+              "name": "standard.portal.list.announcements",
+              "section_id": 22,
+              "position": 3,
+              "project_id": 41,
+              "properties": {},
+              "cacheable" : true,
+              "id": 10000
+            }
+          ],
+          "name": "main"
+        },
+
+        {
+
+           "name":"left",
+           "shared_section": "side-menu"
+        },
+
+        {
+
+          "project_id": 41,
+          "id": 26,
+          "components": [
+            {
+              "name": "standard.portal.widget.community",
+              "section_id": 26,
+              "position": 0,
+              "project_id": 41,
+              "id": 80
+            },
+            {
+              "styles": {
+                "__root__": {
+                  "margin-top": "15px",
+                  "margin-left": "0px"
+                }
+              },
+              "position": 0,
+              "section_id": 35,
+              "project_id": 41,
+              "id": 97,
+              "name": "standard.portal.widget.quicklinks",
+              "cacheable" : true,
+              "properties" : {
+
+                "links" : [
+
+                    {"text":"Guided Help", "page":"casebases"}
+                ]
+              }
+            }
+          ],
+          "name": "right"
+        },
+        {
+
+          "project_id": 41,
+          "id": 27,
+          "components": [
+
+            {
+              "name": "standard.portal.list.popular_articles",
+              "section_id": 27,
+              "position": 0,
+              "project_id": 41,
+              "id": 83
+            }
+          ],
+          "name": "mid"
+        },
+
+        {
+            "name" : "footer",
+            "shared_section" : "site-footer"
+        }
+      ],
+      "id": 126
+    },
+    {
+      "layout": "two-column-right-wide",
+      "name": "search",
+      "url": "search/:query",
+      "project_id": 41,
+      "sections": {
+
+        "header": {
+          "name": "header",
+          "shared_section" : "site-header"
+        }, 
+  
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        }, 
+
+        "right": {
+          "project_id": 41,
+          "id": 24,
+          "components": [
+            {
+              "styles": {
+                "__root__": {
+                  "margin-top": "0px",
+                  "margin-left": "-3px"
+                }
+              },
+              "properties": {
+
+                "search_preview" : false,
+                "query" : "$PAGE-ARGUMENT:1"
+              },
+              "name": "standard.portal.search.results",
+              "section_id": 24,
+              "position": 0,
+              "project_id": 41,
+              "id": 78,
+              "models" : {
+
+                  "search" : {
+
+                    "id" : 5
+                  },
+                  "article" : {
+
+                    "id" : 1
+                  }
+              }
+            }
+          ],
+          "name": "right"
+        },
+        "left": {
+          "project_id": 41,
+          "id": 25,
+          "components": [
+            {
+              "styles": {
+                "__root__": {
+                  "margin-top": "0px",
+                  "margin-left": "0px",
+                  "z-index" : 10000
+                }
+              },
+              "name": "standard.portal.topic.menu_flyout",
+
+              "properties" : {
+
+                "as_filter" : true
+              },
+
+              "actions" : {
+
+                "egain11.product.topic.filter" : [78]
+              },
+
+              "models" : {
+
+                "topic" : {
+
+                    "id" : 4
+                }
+              },
+
+              "section_id": 25,
+              "position": 0,
+              "project_id": 41,
+              "id": 79
+            },
+            {
+              "position": 1,
+              "section_id": 32,
+              "project_id": 41,
+              "id": 101,
+              "name": "standard.portal.widget.community",
+              "version" : "1.2.0",
+              "styles" : {
+                    
+                "__root__" : {
+
+                    "margin-top" : "10px"
+                }
+              },
+              "models" : {
+
+
+                "community" : {
+
+                    "id" : 6
+                }
+              }
+            }
+          ],
+          "name": "left"
+        }
+      },
+      "id": 127
+    },
+    {
+      "layout": "two-column-right-wide",
+      "name": "article",
+      "url": "article/:id/:slug",
+      "project_id": 41,
+      "sections": {
+
+        "header": {
+          "shared_section" : "site-header",
+          "name": "header"
+        },
+
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 92,
+              "name": "standard.portal.article.content",
+              "properties" : {
+
+                  "article_id": "$PAGE-ARGUMENT:0"
+              },
+
+              "models" : {
+
+                "article" : {
+
+                    "id" : 1
+                },
+
+                "favorite" : {
+
+                    "id" : 2
+                }
+              }
+            }
+          ],
+          "name": "right"
+        },
+
+        "left": {
+          "project_id": 41,
+          "id": 32,
+          "components": [
+            {
+              "position": 0,
+              "section_id": 32,
+              "project_id": 41,
+              "id": 93,
+              "name": "standard.portal.topic.menu_flyout",
+              "models" : {
+
+                "topic" : { "id" : 4 }
+              }
+            },
+            {
+              "styles": {
+                "__root__": {
+                  "margin-top": "18px",
+                  "margin-left": "0px"
+                }
+              },
+              "models" : {
+
+                "article" : {
+                    
+                    "id" : 1
+                }
+              },
+              "properties" : {
+
+                "article_id" : "$PAGE-ARGUMENT:0"
+              },
+              "name": "standard.portal.list.related_articles",
+              "section_id": 32,
+              "position": 1,
+              "project_id": 41,
+              "id": 95
+            },
+            {
+              "position": 1,
+              "section_id": 32,
+              "project_id": 41,
+              "id": 101,
+              "name": "standard.portal.widget.community",
+              "version" : "1.2.0",
+              "styles" : {
+                    
+                "__root__" : {
+
+                    "margin-top" : "10px"
+                }
+              },
+              "models" : {
+
+
+                "community" : {
+
+                    "id" : 6
+                }
+              }
+            }
+          ],
+          "name": "left"
+        }
+      },
+      "id": 130
+    },
+
+    {
+      "layout": "two-column-right-wide",
+      "name": "topic",
+      "url": "topic/:id/:slug",
+      "project_id": 41,
+      "sections": {
+        "header": {
+          "name": "header",
+          "shared_section":"site-header"
+        },
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 1003,
+              "name": "standard.portal.article.preview",
+              "properties" : {
+
+                  "topic_id": "$PAGE-ARGUMENT:0",
+                  "shown_article_count" : 2 
+              },
+
+              "models" : {
+
+                "article" : {
+
+                    "id" : 1
+                }
+              }
+            },
+
+            {
+              "position": 1,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 92,
+              "name": "standard.portal.list.article",
+              "properties" : {
+
+                  "topic_id": "$PAGE-ARGUMENT:0",
+                  "skipped_article_count" : 2
+              },
+
+              "models" : {
+
+                "article" : {
+                    "id" : 1
+                },
+
+                "topic" : {
+                    "id" : 4
+                }
+              },
+
+              "styles" : {
+
+                  "__root__" : {
+                    "margin-top" : "10px"
+                  }
+              }
+            }
+          ],
+
+          "name": "right"
+        },
+
+        "left": {
+          "name": "left",
+          "shared_section" : "side-menu"
+        }
+      },
+      "id": 10000
+    },
+
+    {
+      "layout": "two-column-top",
+      "name": "login",
+      "url": "login",
+      "project_id": 41,
+      "sections": {
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 92,
+              "name": "standard.portal.form.login"
+            }
+          ],
+
+          "name": "right"
+        }
+      },
+      "id": 10001
+    },
+
+    {
+      "layout": "two-column-right-wide",
+      "name": "casebase",
+      "url": "casebase/:id/:dummy",
+      "project_id": 41,
+      "sections": {
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 92,
+              "name": "standard.portal.casebase.content",
+              "properties" : {
+                    "casebaseId" : "$PAGE-ARGUMENT:0"
+              },
+
+              "models" : {
+                "casebase" : {
+                    "id" : 7
+                }
+              }
+            }
+          ],
+
+          "name": "right"
+          
+        }, 
+
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+        "header": {
+
+            "name" : "header",
+            "shared_section" : "site-header"
+        },
+
+        "left" : {
+
+            "name" : "left",
+            "shared_section" : "side-menu"
+        }
+      },
+
+      "id": 10002
+    },
+
+    {
+      "layout": "two-column-right-wide",
+      "name": "favorites",
+      "url": "favorites",
+      "project_id": 41,
+      "sections": {
+            
+        "header" : {
+
+            "name":"header",
+            "shared_section" : "site-header"
+        },
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 92,
+              "name": "standard.portal.list.favorites"
+            }
+          ],
+
+          "name": "right"
+        },
+
+        "left" : {
+
+            "name" : "left",
+            "shared_section" : "side-menu"
+        }
+      },
+
+      "id": 10002
+    },
+
+    {
+      "layout": "two-column-right-wide",
+      "name": "casebases",
+      "url": "casebases",
+      "project_id": 41,
+      "sections": {
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 100,
+              "name": "standard.portal.list.casebases",
+              
+              "models" : {
+                "casebase" : {
+                    "id" : 7
+                }
+              }
+            }
+          ],
+
+          "name": "right"
+        },
+
+        "left": {
+
+          "name": "left",
+          "shared_section" : "side-menu"
+        },
+
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+        "header" : {
+
+
+            "name" : "header",
+            "shared_section" : "site-header"
+        }
+      },
+
+      "id": 10003
+    },
+
+    {
+      "layout": "two-column-right-wide",
+      "name": "email_friend",
+      "url": "email_friend",
+      "project_id": 41,
+      "sections": {
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 100,
+              "name": "standard.portal.form.email_friend",
+              "version" : "1.2.0"
+            }
+          ],
+
+          "name": "right"
+        },
+
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+
+        "left": {
+          "name": "left",
+          "shared_section" : "side-menu"
+        },
+
+        "header": {
+          "name": "header",
+          "shared_section" : "site-header"
+        }
+      },
+
+      "id": 10004
+    },
+
+    {
+      "layout": "two-column-right-wide",
+      "name": "contact_us",
+      "url": "contact_us",
+      "project_id": 41,
+      "sections": {
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 100,
+              "name": "standard.portal.form.contact_us",
+              "version" : "11.0.0",
+              "models" : {
+
+                "topic" : {
+                    "id" : 4
+                }
+              }
+            }
+          ],
+
+          "name": "right"
+        },
+
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+
+        "left": {
+          "name": "left",
+          "shared_section" : "side-menu"
+        },
+
+        "header": {
+          "name": "header",
+          "shared_section" : "site-header"
+        }
+      },
+
+      "id": 10004
+    },
+
+    {
+      "layout": "two-column-right-wide",
+      "name": "forgot_password",
+      "url": "forgot_password",
+      "project_id": 41,
+      "sections": {
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 100,
+              "name": "standard.portal.form.forgot_password",
+              "version" : "11.0.0"
+            }
+          ],
+
+          "name": "right"
+        },
+
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+
+        "left": {
+          "name": "left",
+          "shared_section" : "side-menu"
+        },
+
+        "header": {
+          "name": "header",
+          "shared_section" : "site-header"
+        }
+      },
+
+      "id": 10004
+    },
+    
+    {
+      "layout": "two-column-right-wide",
+      "name": "signup",
+      "url": "signup",
+      "project_id": 41,
+      "sections": {
+
+        "right": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 100,
+              "name": "standard.portal.form.signup",
+              "version" : "11.0.0"
+            }
+          ],
+
+          "name": "right"
+        },
+
+        "footer": {
+          "name": "footer",
+          "shared_section" : "site-footer"
+        },
+
+        "left": {
+          "name": "left",
+          "shared_section" : "side-menu"
+        },
+
+        "header": {
+          "name": "header",
+          "shared_section" : "site-header"
+        }
+      },
+
+      "id": 10004
+    },
+    
+    {
+      "layout": "three-column-top",
+      "name": "homepage",
+      "url": "/",
+      "project_id": 41,
+      "sections": {
+
+        "header": {
+          "name": "header",
+          "shared_section":"site-header"
+        },
+
+        "main" : {
+
+            "name" : "main",
+            "components" : [
+
+                {
+                  "name": "standard.portal.list.highlighted_topics",
+                  "version" : "11.0.0",
+                  "position": 1,
+                  "section_id": 31,
+                  "project_id": 41,
+                  "id": 100,
+                  "properties" : {
+
+                    "shown_topic_count" : 5,
+                    "topic_page" : "topic"
+                  },
+                  "models" : {
+
+                    "topic" : {
+                        "id" : 4
+                    }
+                  }
+                }
+            ],
+            "styles" : {
+
+                "__root__" : {
+                
+                    "margin-bottom" : "40px"
+                }
+            }
+        },
+
+        "mid": {
+          "project_id": 41,
+          "id": 31,
+          "components": [
+
+
+            {
+              "name": "standard.portal.article.list_announcements",
+              "version" : "1.2.0",
+              "position": 2,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 10000,
+              "properties" : {
+
+                  "flyout_image_src" : "./assets/img/Announcements.png"   
+              },
+
+              "models" : {
+
+                "article" : {
+                    "id" : 1
+                }
+              }
+            },
+            {
+              "styles" : {
+
+                 "__root__" : {"margin-top":"40px"}
+              },
+              "position": 2,
+              "section_id": 31,
+              "project_id": 41,
+              "id": 100,
+              "name": "standard.portal.list.popular_articles",
+              "version" : "1.2.0",
+              "properties" : {
+              	
+              	"limit" : 5,
+              	"skip" : 0,
+                "flyout_image_src" : "./assets/img/PopularArticles.png"
+              },
+
+              "models" : {
+              
+                "dfaq" : {
+                    "id" : 3
+                }
+              }
+            }
+          ],
+
+          "name": "mid"
+        },
+
+
+        "right": {
+          "project_id": 41,
+          "id": 32,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 32,
+              "project_id": 41,
+              "id": 101,
+              "name": "standard.portal.form.login",
+              "version" : "1.2.0"
+            },
+
+            {
+              "position": 1,
+              "section_id": 32,
+              "project_id": 41,
+              "id": 101,
+              "name": "standard.portal.widget.community",
+              "version" : "1.2.0",
+              "styles" : {
+                    
+                "__root__" : {
+
+                    "margin-top" : "10px"
+                }
+              },
+              "models" : {
+
+
+                "community" : {
+
+                    "id" : 6
+                }
+              }
+            },
+
+            {
+              "styles" : {
+
+                 "__root__" : {"margin-top":"10px"}
+              },
+              "position": 2,
+              "section_id": 32,
+              "project_id": 41,
+              "id": 101,
+              "name": "standard.portal.widget.quicklinks",
+              "version" : "1.2.0",
+              "type" : "standard",
+              "properties" : {
+
+                "links" : [
+
+                    {"text":"My Bookmarks", "page":"favorites"},
+                    {"text":"Guided Help", "page":"casebases"},
+                    {"text":"Login", "page":"login"}
+                ]
+              }
+            }
+          ],
+
+          "name": "right"
+        },
+        "left": {
+          "project_id": 41,
+          "id": 32,
+          "components": [
+
+            {
+              "position": 0,
+              "section_id": 32,
+              "project_id": 41,
+              "id": 101,
+              "name": "standard.portal.topic.menu_flyout",
+              "version" : "1.2.0",
+              "styles" : {
+
+                "__root__": {
+                    
+                    "z-index" : 10000
+                }
+              },
+
+              "models" : {
+
+                "topic" : {
+
+                    "id" : 4
+                }
+              }
+            }
+          ],
+
+          "name": "left"
+        },
+
+        "footer": {
+
+            "name" : "footer",
+            "shared_section" : "site-footer"
+        }
+      },
+
+      "id": 10004
+
+    }
+  ],
+  "id": 41
+}

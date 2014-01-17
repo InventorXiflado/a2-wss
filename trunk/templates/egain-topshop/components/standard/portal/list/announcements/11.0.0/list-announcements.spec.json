@@ -1,0 +1,17 @@
+{
+    "name": "standard.portal.list.announcements",
+    "title" : "Announcements List",
+    "version" : "11.0.0",
+    "description" : "List of all the announcement articles",
+    "author" : "Garindra Prahandono",
+
+    "property" : [
+
+        {
+            "name" : "imageUrl",
+            "title" : "Image URL",
+            "description" : "Url of the image sitting on the top right side of the component.",
+            "default" : "./selfservice/themes/unitel/images/widget-custom_box-img-chips.jpg"
+        }
+    ]
+}
